@@ -12,6 +12,30 @@
     },
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "helloworld"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "phonegap-plugin-push": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "KesMobile"
     }
   },
   "dependent_plugins": {}

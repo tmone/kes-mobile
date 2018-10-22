@@ -8,10 +8,31 @@
   },
   "installed_plugins": {
     "cordova-plugin-nativestorage": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "phonegap-plugin-push": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   },
   "dependent_plugins": {}
