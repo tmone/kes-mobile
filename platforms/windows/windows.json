@@ -1,0 +1,62 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "helloworld"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "helloworld"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-nativestorage.mainHandle",
+      "file": "plugins/cordova-plugin-nativestorage/www/mainHandle.js",
+      "pluginId": "cordova-plugin-nativestorage",
+      "clobbers": [
+        "NativeStorage"
+      ]
+    },
+    {
+      "id": "cordova-plugin-nativestorage.LocalStorageHandle",
+      "file": "plugins/cordova-plugin-nativestorage/www/LocalStorageHandle.js",
+      "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+      "id": "cordova-plugin-nativestorage.NativeStorageError",
+      "file": "plugins/cordova-plugin-nativestorage/www/NativeStorageError.js",
+      "pluginId": "cordova-plugin-nativestorage"
+    },
+    {
+      "id": "cordova-plugin-nativestorage.NativeStorage",
+      "file": "plugins/cordova-plugin-nativestorage/src/windows/NativeStorage.js",
+      "pluginId": "cordova-plugin-nativestorage",
+      "runs": true
+    },
+    {
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
+      "clobbers": [
+        "navigator.splashscreen"
+      ]
+    },
+    {
+      "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+      "file": "plugins/cordova-plugin-splashscreen/www/windows/SplashScreenProxy.js",
+      "pluginId": "cordova-plugin-splashscreen",
+      "runs": true
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-nativestorage": "2.3.2",
+    "cordova-plugin-splashscreen": "5.0.2"
+  }
+}
