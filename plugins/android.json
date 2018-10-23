@@ -38,6 +38,12 @@
     "phonegap-plugin-barcodescanner": {
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   },
   "dependent_plugins": {}

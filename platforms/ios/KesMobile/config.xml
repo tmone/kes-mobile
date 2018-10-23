@@ -45,6 +45,12 @@
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner" />
     </feature>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <feature name="Vibration">
+        <param name="ios-package" value="CDVVibration" />
+    </feature>
     <name>KesMobile</name>
     <description>
         A tool for pickup and delivery Kerry Express VN.
@@ -103,6 +109,7 @@
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="blacktranslucent" />
+    <preference name="CameraUsesGeolocation" value="false" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />

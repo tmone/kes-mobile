@@ -36,6 +36,12 @@
     },
     "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "KesMobile"
     }
   },
   "dependent_plugins": {}

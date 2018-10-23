@@ -33,6 +33,12 @@
     },
     "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   },
   "dependent_plugins": {}
