@@ -102,6 +102,9 @@
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />
     <preference name="StatusBarStyle" value="blacktranslucent" />
     <preference name="phonegap-version" value="cli-8.0.0" />
+    <engine name="windows" spec="^5.0.0" />
+    <engine name="ios" spec="^4.5.5" />
+    <engine name="android" spec="^7.1.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.3.2" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
@@ -119,7 +122,4 @@
     </plugin>
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
-    <engine name="windows" spec="^5.0.0" />
-    <engine name="ios" spec="^4.5.5" />
-    <engine name="android" spec="^7.1.1" />
 </widget>

@@ -113,4 +113,5 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />
+    <preference name="phonegap-version" value="cli-8.0.0" />
 </widget>

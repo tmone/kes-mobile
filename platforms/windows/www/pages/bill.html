@@ -1,0 +1,222 @@
+﻿<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">{{$route.params.billId}}</div>
+      </div>
+    </div>
+    <div class="page-content" style="padding-bottom:50px;">
+      <div class="block-title">Thông tin người nhận</div>
+      <div class="list">
+          <ul>
+            <li>
+              <span class="item-content">
+                <div class="item-media"><a class="link link-icon"><i class="f7-icons">person</i></a></div>
+                <div class="item-inner">
+                  <div class="item-title">
+                    <div class="item-header">Liên hệ</div>
+                    {{$root.lastChoice.Recipient_Name}}&nbsp;
+                    <div class="item-footer">{{$root.lastChoice.Recipient_Contact_Person}}</div>
+                  </div>                  
+                </div>
+              </span>
+            </li>
+            <li>
+              <span class="item-content">
+                <div class="item-media"><a href="http://map.google.com?q={{$root.lastChoice.Recipient_Address}}" class="link external"><i class="f7-icons">home</i></a></div>
+                <div class="item-inner">
+                  <div class="item-title">
+                    <div class="item-header">Địa chỉ</div>
+                    {{$root.lastChoice.Recipient_Address}}&nbsp;
+                  </div>                  
+                </div>
+              </a>
+            </li>
+            <li>
+              <span class="item-content">
+                <div class="item-media"><a href="tel:{{$root.lastChoice.Recipient_Contact_Person}}" class="link external"><i class="f7-icons">phone_round</i></a></div>
+                <div class="item-inner">
+                  <div class="item-title">
+                    <div class="item-header">Điện thoại</div>
+                    {{$root.lastChoice.Recipient_Phone_No}}&nbsp;
+                  </div>                  
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="block-title">Thông tin Hàng hóa</div>
+        <div class="list">
+            <ul>
+              <li>
+                <span class="item-content">
+                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">money_dollar</i></a></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Thu Hộ</div>
+                      {{$root.lastChoice.COD_Amount}}&nbsp;
+                    </div>                  
+                  </div>
+                </span>
+              </li>
+              <li>
+                <span class="item-content">
+                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">tags</i></a></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Ghi chú</div>
+                      {{$root.lastChoice.Remark}}&nbsp;
+                    </div>                  
+                  </div>
+                </a>
+              </li>
+              <li>
+                <span class="item-content">
+                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">layers</i></a></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Giao hàng</div>
+                      {{$root.lastChoice.Special_Delivery_Remark}}&nbsp;
+                    </div>                  
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-title">Thông tin người giao</div>
+          <div class="list">
+            <ul>
+              <li>
+                <span class="item-content">
+                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">person</i></a></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Liên hệ</div>
+                      {{$root.lastChoice.Sender_Name}}&nbsp;
+                      <div class="item-footer">{{$root.lastChoice.Sender_Contact_Person}}</div>
+                    </div>                  
+                  </div>
+                </span>
+              </li>
+              <li>
+                <span class="item-content">
+                  <div class="item-media"><a href="http://map.google.com?q={{$root.lastChoice.Recipient_Address}}" class="link external"><i class="f7-icons">home</i></a></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Địa chỉ</div>
+                      {{$root.lastChoice.Sender_Address}}&nbsp;
+                    </div>                  
+                  </div>
+                </a>
+              </li>
+              <li>
+                <span class="item-content">
+                  <div class="item-media"><a href="tel:{{$root.lastChoice.Recipient_Contact_Person}}" class="link external"><i class="f7-icons">phone_round</i></a></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-header">Điện thoại</div>
+                      {{$root.lastChoice.Sender_Phone_No}}&nbsp;
+                    </div>                  
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+    </div>
+    <div class="fab fab-extended fab-center-bottom color-green">
+      <a href="/pod/{{$route.params.billId}}/">
+        <i class="icon f7-icons ios-only">check</i>
+        <i class="icon material-icons md-only">check</i>
+        <div class="fab-text">Giao Thành Công</div>
+      </a>
+    </div>
+    <div class="fab fab-extended fab-left-bottom color-red">
+      <a href="/delay/{{$route.params.billId}}/">
+        <i class="icon f7-icons ios-only">alarm</i>
+        <i class="icon material-icons md-only">alarm</i>
+        <div class="fab-text">DEL</div>
+      </a>
+    </div>
+    <div class="fab fab-extended fab-right-bottom color-pink">
+      <a href="/return/{{$route.params.billId}}/">
+        <i class="icon f7-icons ios-only">reply</i>
+        <i class="icon material-icons md-only">reply</i>
+        <div class="fab-text">RET</div>
+      </a>
+    </div>
+  </div>
+</template>
+<style>
+  p {
+    margin: 10px 0;
+  }
+</style>
+<script>
+  return {
+    // Lifecycle Hooks
+    beforeCreate() {
+      console.log('componentBeforeCreate', this)
+    },
+    created() {
+      console.log('componentCreated', this)
+    },
+    beforeMount() {
+      console.log('componentBeforeMount', this)
+    },
+    mounted() {
+      console.log('componentMounted', this);
+    },
+    beforeDestroy() {
+      console.log('componentBeforeDestroy', this);
+    },
+    destroyed() {
+      console.log('componentDestroyed', this);
+    },
+    // Component Data
+    data: function () {
+      // Must return an object
+      return {
+        name: 'Jimmy',
+        age: 25,
+        like: ['Tennis', 'Chess', 'Football'],
+      }
+    },
+    // Component Methods
+    methods: {
+      openAlert: function () {
+        var self = this;
+        self.$app.dialog.alert('Hello World');
+      },
+    },
+    // Page Events
+    on: {
+      pageMounted: function(e, page) {
+        console.log('pageMounted', page);
+      },
+      pageInit: function(e, page) {
+        console.log('pageInit', page);
+      },
+      pageBeforeIn: function(e, page) {
+        console.log('pageBeforeIn', page);
+      },
+      pageAfterIn: function(e, page) {
+        console.log('pageAfterIn', page);
+      },
+      pageBeforeOut: function(e, page) {
+        console.log('pageBeforeOut', page);
+      },
+      pageAfterOut: function(e, page) {
+        console.log('pageAfterOut', page);
+      },
+      pageBeforeRemove: function(e, page) {
+        console.log('pageBeforeRemove', page);
+      },
+    }
+  }
+</script>

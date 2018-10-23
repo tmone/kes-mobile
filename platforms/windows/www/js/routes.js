@@ -21,6 +21,10 @@
     componentUrl: './pages/page-loader-component.html',
   },
   {
+    path: '/bill/:billId/',
+    componentUrl: './pages/bill.html',
+  },
+  {
     path: '/request-and-load/user/:userId/',
     async: function (routeTo, routeFrom, resolve, reject) {
       // Router instance
