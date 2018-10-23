@@ -158,3 +158,8 @@ $$('.scan-barcode').on('click', function () {
   );
   
 });
+
+//Grid Devextreme
+$$('.scan-barcode').dxDataGrid({
+  dataSource:[{id:1,name:'abc'},{id:2,name:def}]
+});
