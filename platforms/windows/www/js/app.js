@@ -158,3 +158,8 @@ $$('.scan-barcode').on('click', function () {
   );
   
 });
+
+//Grid Devextreme
+let instance = DevExpress.ui.dxDataGrid.getInstance($$('#grid-data'),{
+  dataSource:[{id:1,name:'abc'},{id:2,name:'def'}]
+});
