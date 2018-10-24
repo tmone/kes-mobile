@@ -19,6 +19,7 @@ var app = new Framework7({
     geoLocation: {},
     SystemExceptionStore: [],
     version: 18,
+    signal: true,
   },
   store: null,
   gridComponent: null,
@@ -37,15 +38,20 @@ var app = new Framework7({
     refreshGrid: function () {
       app.gridComponent = $("#grid-data").dxDataGrid({
         dataSource: app.store,
-        filterRow: {
-          visible: true
-        },
+        // filterRow: {
+        //   visible: true
+        // },
         scrolling: {
           mode: "virtual"
         },
         selection: {
           mode: "single"
         },
+        // searchPanel: {
+        //   visible: true,
+        //   width: '100%',
+        //   placeholder: "Tìm..."
+        // },
         hoverStateEnabled: true,
         showBorders: true,
         showColumnLines: false,
@@ -53,6 +59,7 @@ var app = new Framework7({
         columns: [
           {
             dataField: "Id",
+            allowSearch: false,
             visible: false,
             editOptions: {
               visible: false
@@ -60,6 +67,7 @@ var app = new Framework7({
           },
           {
             dataField: "PRO",
+            allowSearch: false,
             visible: false,
             editOptions: {
               visible: false
@@ -68,6 +76,7 @@ var app = new Framework7({
           },
           {
             dataField: "Consignment_No",
+            allowSorting:false,
             caption: "Số VĐ",
             headerCellTemplate: function (head, info) {
               var tmp = `<div class="item-content">
@@ -78,6 +87,9 @@ var app = new Framework7({
                     <span id="totalCountDEL" class="badge color-red badge-fix">0</span>
                     <span id="totalCountPOD" class="badge color-green badge-fix">0</span>
                     <span id="totalCountRET" class="badge color-orange badge-fix">0</span>
+                    <a id="search" href="#" >
+                      <span id="totalCountRET" class="badge color-blue badge-fix"><i class="f7-icons" style="font-size:12px">search</i></span>
+                    </a>
                   </div>                  
                 </div>
               </div>`;
@@ -91,6 +103,11 @@ var app = new Framework7({
                 $('#totalCountRET').text(cRET);
                 $('#totalCountDEL').text(cDEL);
                 $('#totalCountNOT').text(cNOT);
+                $$('#search').on('click', function () {
+                  app.dialog.prompt('Tìm? Bấm Ok để tải dữ liệu', function (name) {
+                    app.gridComponent.searchByText(name);
+                  })
+                });
 
               });
             },
@@ -121,6 +138,56 @@ var app = new Framework7({
               ).appendTo(container);
               $(container).css("padding", "0px");
             }
+          },
+          {
+            dataField: "Created_Date",
+            visible: false,
+            editOptions: {
+              visible: false
+            },
+            sortOrder: "desc"
+          },
+          {
+            dataField: "Recipient_Name",
+            visible: false,
+            editOptions: {
+              visible: false
+            },
+          },
+          {
+            dataField: "Recipient_Contact_Person",
+            visible: false,
+            editOptions: {
+              visible: false
+            },
+          },
+          {
+            dataField: "Recipient_Phone_No",
+            visible: false,
+            editOptions: {
+              visible: false
+            },
+          },
+          {
+            dataField: "Recipient_Address",
+            visible: false,
+            editOptions: {
+              visible: false
+            },
+          },
+          {
+            dataField: "Remark",
+            visible: false,
+            editOptions: {
+              visible: false
+            },
+          },
+          {
+            dataField: "Special_Delivery_Remark",
+            visible: false,
+            editOptions: {
+              visible: false
+            },
           }
         ],
         remoteOperations: true,
@@ -205,8 +272,9 @@ function onGeoError(error) {
 ///END GEO
 
 function checkConnection() {
-  var networkState = navigator.connection.type;
 
+  var networkState = navigator.connection.type;
+  console.log("Check network", networkState, new Date().toJSON());
   var states = {};
   states[Connection.UNKNOWN] = 'Unknown connection';
   states[Connection.ETHERNET] = 'Ethernet connection';
@@ -223,6 +291,15 @@ function checkConnection() {
       text: "Không có tín hiệu mạng",
       closeTimeout: 2000,
     }).open();
+    setTimeout(checkConnection, 10000);
+  } else {
+    if (app.data.signal) {
+
+    } else {
+      app.data.signal = true;
+      app.gridComponent.refresh();
+    }
+    setTimeout(checkConnection, 30000);
   }
 }
 
@@ -232,11 +309,11 @@ function checkConnection() {
 //////////////////////////////////////////
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function () {
-  if (navigator.connection.type == navigator.connection.NONE) {
-    app.dialog.alert("Không có tín hiệu mạng!");
-  }
+  // if (navigator.connection.type == navigator.connection.NONE) {
+  //   app.dialog.alert("Không có tín hiệu mạng!");
+  // }
   // be certain to make an unique reference String for each variable!
-  setInterval(checkConnection, 30000);
+  checkConnection();
 
   // window.AppUpdate.checkAppUpdate(function () {
 
@@ -325,6 +402,11 @@ $$('#dang-xuat').on('click', function () {
   app.loginScreen.open("#my-login-screen")
 });
 
+// route
+$$('.route-map').on('click', function () {
+  mainView.router.navigate("/route/");
+});
+
 // Scan click
 
 $$('.scan-barcode').on('click', function () {
@@ -338,7 +420,7 @@ $$('.scan-barcode').on('click', function () {
       if (app.gridComponent) {
         app.gridComponent.selectRows(a);
 
-        if (app.gridComponent.getSelectedRowKeys().filter(x => x == a ).length > 0) {
+        if (app.gridComponent.getSelectedRowKeys().filter(x => x == a).length > 0) {
           mainView.router.navigate("/bill/" + a + "/");
         } else {
           app.toast.create({

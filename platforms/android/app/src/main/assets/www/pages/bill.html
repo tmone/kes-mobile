@@ -217,7 +217,7 @@
       },
       addPOD: function (a) {
         app.dialog.prompt('Nhập đầy đủ họ tên nhận hàng?', function (name) {
-          if (name && name.length > 3) {
+          if (name && name.length > 2) {
             app.dialog.confirm('Bạn chắc chắn đã giao cho <span style="color:orange">' + name + '</span>?', function () {
               // Show Preloader
               app.preloader.show();

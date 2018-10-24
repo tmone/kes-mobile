@@ -30,7 +30,7 @@ routes = [
   {
     path: '/page-loader-component/:user/:userId/:posts/:postId/',
     componentUrl: './pages/page-loader-component.html',
-  },
+  },  
   {
     path: '/bill/:billId/',
     componentUrl: './pages/bill.html',
@@ -38,6 +38,41 @@ routes = [
   {
     path: '/del/:billId/',
     componentUrl: './pages/del.html',
+  },
+  {
+    path: '/route/',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      //var userId = routeTo.params.userId;
+     
+      app.store.load().done(function (data) {
+        var _route = [];
+          if (data) {
+              _route = data.filter(x => x.PRO > 2);
+          }
+          resolve(
+            {
+              componentUrl: './pages/route.html',
+            },
+            {
+              context: {
+                _route: _route,
+              }
+            }
+          );
+          // Hide Preloader
+          app.preloader.hide();
+      });      
+    },
   },
   {
     path: '/request-and-load/user/:userId/',

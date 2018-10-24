@@ -198,16 +198,16 @@
     methods: {
       callPhone: function (a) {
         
-          var platform = device.platform;
-          if (platform != "browser") {
-            window.plugins.CallNumber.callNumber(function (result) {
-              app.dialog.alert(result);
-            }, function (error) {
-              app.dialog.alert(error);
-            }, a, true);
-          } else {
+          // var platform = device.platform;
+          // if (platform != "browser") {
+          //   window.plugins.CallNumber.callNumber(function (result) {
+          //     app.dialog.alert(result);
+          //   }, function (error) {
+          //     app.dialog.alert(error);
+          //   }, a, true);
+          // } else {
             var ref = cordova.InAppBrowser.open('tel:' + a, '_system');
-          }
+          // }
         
       },
       showLocation: function (a) {
@@ -217,7 +217,7 @@
       },
       addPOD: function (a) {
         app.dialog.prompt('Nhập đầy đủ họ tên nhận hàng?', function (name) {
-          if (name && name.length > 3) {
+          if (name && name.length > 2) {
             app.dialog.confirm('Bạn chắc chắn đã giao cho <span style="color:orange">' + name + '</span>?', function () {
               // Show Preloader
               app.preloader.show();
