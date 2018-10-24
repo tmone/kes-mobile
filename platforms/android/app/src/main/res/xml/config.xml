@@ -39,13 +39,6 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
-    <feature name="AppUpdate">
-        <param name="android-package" value="com.vaenow.appupdate.android.CheckAppUpdate" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="RareloopAppVersion">
-        <param name="android-package" value="com.rareloop.cordova.appversion.RareloopAppVersion" />
-    </feature>
     <name>KesMobile</name>
     <description>
         A tool for pickup and delivery Kerry Express VN.

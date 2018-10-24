@@ -45,14 +45,7 @@
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    },
-    "cordova-plugin-android-update": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   },
-  "dependent_plugins": {
-    "cordova-plugin-appversion": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    }
-  }
+  "dependent_plugins": {}
 }

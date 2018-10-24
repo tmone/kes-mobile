@@ -111,14 +111,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-android-update": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-android-update"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-appversion": {
     "source": {
       "type": "registry",

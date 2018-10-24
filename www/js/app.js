@@ -57,7 +57,7 @@ var app = new Framework7({
             editOptions: {
               visible: false
             }
-          }, 
+          },
           {
             dataField: "PRO",
             visible: false,
@@ -65,7 +65,7 @@ var app = new Framework7({
               visible: false
             },
             sortOrder: "desc"
-          }, 
+          },
           {
             dataField: "Consignment_No",
             caption: "Số VĐ",
@@ -97,38 +97,38 @@ var app = new Framework7({
             cellTemplate: function (container, options) {
               let co = "color-gray color-green color-p color-red color-gray".split(' ');
               let tmp = `<div class="card">
-                <div class="card-header `+ co[options.data.PRO]  +`">Card header</div>
+                <div class="card-header `+ co[options.data.PRO] + `">Card header</div>
                 <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.</div>
                 <div class="card-footer">Card Footer</div>
               </div>`;
               $("<div class='card'>").append(
-                  $("<div class='card-header card-header-fix'>").append(
-                    $("<span>").text(options.data.Consignment_No),
-                    $("<a class='link link icon-only "+ co[options.data.PRO]  +" link-icon-fix'><i class='f7-icons size-40'>bookmark_fill</i></a>"),                    
+                $("<div class='card-header card-header-fix'>").append(
+                  $("<span>").text(options.data.Consignment_No),
+                  $("<a class='link link icon-only " + co[options.data.PRO] + " link-icon-fix'><i class='f7-icons size-40'>bookmark_fill</i></a>"),
+                ),
+                $("<div class='card-content card-content-padding card-content-fix'>").append(
+                  $("<div>").text(options.data.Recipient_Name),
+                  $("<div>").text(options.data.Recipient_Address),
+                  $("<div>").append(
+                    $("<span>").text(options.data.Recipient_Phone_No),
+                    " ",
+                    $("<span>").text(options.data.Recipient_Contact_Person),
                   ),
-                  $("<div class='card-content card-content-padding card-content-fix'>").append(
-                    $("<div>").text(options.data.Recipient_Name),
-                    $("<div>").text(options.data.Recipient_Address),
-                    $("<div>").append(
-                      $("<span>").text(options.data.Recipient_Phone_No),
-                      " ",
-                      $("<span>").text(options.data.Recipient_Contact_Person),
-                    ),
-                    $("<div>").text(options.data.Remark),
-                  ),
-                  //$("<div class='card-footer'>").text(options.data.Est_Delivery_Date),
-                  // $("<img>", { "src": options.value })
-                ).appendTo(container);
+                  $("<div>").text(options.data.Remark),
+                ),
+                //$("<div class='card-footer'>").text(options.data.Est_Delivery_Date),
+                // $("<img>", { "src": options.value })
+              ).appendTo(container);
               $(container).css("padding", "0px");
             }
           }
         ],
         remoteOperations: true,
         onSelectionChanged: function (e) {
-          app.data.lastChoice={};
+          app.data.lastChoice = {};
           var data = e.selectedRowsData;
           if (data.length > 0) {
-            if(data[0].PRO>2){
+            if (data[0].PRO > 2) {
               app.data.lastChoice = data[0];
               mainView.router.navigate('/bill/' + data[0].Consignment_No + '/');
             }
@@ -233,16 +233,16 @@ function checkConnection() {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function () {
   if (navigator.connection.type == navigator.connection.NONE) {
-    app.dialog.alert("Không có tín hiệu mạng!");    
+    app.dialog.alert("Không có tín hiệu mạng!");
   }
   // be certain to make an unique reference String for each variable!
   setInterval(checkConnection, 30000);
 
-  window.AppUpdate.checkAppUpdate(function(){
+  // window.AppUpdate.checkAppUpdate(function () {
 
-  }, function(){
+  // }, function () {
 
-  }, serverUrl+"/version.xml");
+  // }, serverUrl + "/version.xml");
 
   NativeStorage.getItem("config", function (result) {
     app.data.serverUrl = result.server || app.data.serverUrl;

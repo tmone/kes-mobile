@@ -189,22 +189,6 @@ module.exports = [
         "id": "cordova-plugin-device.DeviceProxy",
         "pluginId": "cordova-plugin-device",
         "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-appversion/www/app-version.js",
-        "id": "cordova-plugin-appversion.RareloopAppVersion",
-        "pluginId": "cordova-plugin-appversion",
-        "clobbers": [
-            "AppVersion"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-android-update/www/AppUpdate.js",
-        "id": "cordova-plugin-android-update.AppUpdate",
-        "pluginId": "cordova-plugin-android-update",
-        "clobbers": [
-            "AppUpdate"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -223,9 +207,7 @@ module.exports.metadata =
     "cordova-plugin-camera": "4.0.3",
     "cordova-plugin-vibration": "3.1.0",
     "cordova-plugin-inappbrowser": "3.0.0",
-    "cordova-plugin-device": "2.0.2",
-    "cordova-plugin-appversion": "1.0.0",
-    "cordova-plugin-android-update": "1.0.1"
+    "cordova-plugin-device": "2.0.2"
 }
 // BOTTOM OF METADATA
 });
