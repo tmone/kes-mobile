@@ -233,13 +233,13 @@ function checkConnection() {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function () {
   if (navigator.connection.type == navigator.connection.NONE) {
-    alert("Không có tín hiệu mạng!");
+    app.dialog.alert("Không có tín hiệu mạng!");    
   }
   // be certain to make an unique reference String for each variable!
   setInterval(checkConnection, 30000);
 
   window.AppUpdate.checkAppUpdate(function(){
-    
+
   }, function(){
 
   }, serverUrl+"/version.xml");
