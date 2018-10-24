@@ -104,7 +104,7 @@ var app = new Framework7({
               $("<div class='card'>").append(
                 $("<div class='card-header card-header-fix'>").append(
                   $("<span>").text(options.data.Consignment_No),
-                  $("<a class='link link icon-only " + co[options.data.PRO] + " link-icon-fix'><i class='f7-icons size-40'>bookmark_fill</i></a>"),
+                  $("<a class='link link icon-only " + co[options.data.PRO] + " link-icon-fix'><i class='f7-icons size-32'>bookmark_fill</i></a>"),
                 ),
                 $("<div class='card-content card-content-padding card-content-fix'>").append(
                   $("<div>").text(options.data.Recipient_Name),
@@ -338,7 +338,7 @@ $$('.scan-barcode').on('click', function () {
       if (app.gridComponent) {
         app.gridComponent.selectRows(a);
 
-        if (app.gridComponent.getSelectedRowKeys().filter(x => x == a).length > 0) {
+        if (app.gridComponent.getSelectedRowKeys().filter(x => x == a ).length > 0) {
           mainView.router.navigate("/bill/" + a + "/");
         } else {
           app.toast.create({

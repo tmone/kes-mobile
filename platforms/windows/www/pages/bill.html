@@ -131,8 +131,9 @@
           </li>
         </ul>
       </div>
-    </div>    
-    <div class="fab fab-extended fab-center-bottom color-green">
+    </div>   
+    {{#js_if "this.$root.lastChoice.PRO>2"}}
+    <div class="fab fab-extended fab-right-bottom color-green">
       <a href="#" @click="addPOD('{{$route.params.billId}}')">
         <i class="icon f7-icons ios-only">check</i>
         <i class="icon material-icons md-only">check</i>
@@ -146,13 +147,14 @@
         <div class="fab-text">DEL</div>
       </a>
     </div>
-    <div class="fab fab-extended fab-right-bottom color-orange">
+    <div class="fab fab-extended fab-right-top color-orange">
       <a href="#" @click="addRET('{{$route.params.billId}}')">
         <i class="icon f7-icons ios-only">reply</i>
         <i class="icon material-icons md-only">reply</i>
         <div class="fab-text">RET</div>
       </a>
     </div>
+    {{/js_if}}
   </div>
 </template>
 <style>
@@ -185,11 +187,11 @@
     },
     // Component Data
     data: function () {
-      // Must return an object
+      // Must return an object      
       return {
         name: 'Jimmy',
         age: 25,
-        like: ['Tennis', 'Chess', 'Football'],
+        like: ['Tennis', 'Chess', 'Football'],        
       }
     },
     // Component Methods
@@ -199,9 +201,9 @@
           var platform = device.platform;
           if (platform != "browser") {
             window.plugins.CallNumber.callNumber(function (result) {
-
+              app.dialog.alert(result);
             }, function (error) {
-
+              app.dialog.alert(error);
             }, a, true);
           } else {
             var ref = cordova.InAppBrowser.open('tel:' + a, '_system');
