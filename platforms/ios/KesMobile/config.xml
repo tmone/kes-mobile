@@ -57,6 +57,9 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <feature name="RareloopAppVersion">
+        <param name="ios-package" value="RareloopAppVersion" />
+    </feature>
     <name>KesMobile</name>
     <description>
         A tool for pickup and delivery Kerry Express VN.

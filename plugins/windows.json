@@ -48,7 +48,14 @@
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-android-update": {
+      "PACKAGE_NAME": "KesMobile"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-appversion": {
+      "PACKAGE_NAME": "KesMobile"
+    }
+  }
 }

@@ -42,6 +42,7 @@
 		60A1981F74DE47EF9D73873E /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = F690C8DB40484EC4B00E8715 /* CDVVibration.m */; };
 		DB2EB63F427D48C08E0229B6 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 07608D4DC0BB41DF89AA1EFB /* CDVInAppBrowser.m */; };
 		90D1FBA1E9684C66BFF75902 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 97ACF99DC1924FAD99786328 /* CDVDevice.m */; };
+		EE3F9ED8406C4B7292743127 /* RareloopAppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = C24CE1AB9B8E4D33881C7C1A /* RareloopAppVersion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		3DE080A2E32645EF940C9A4C /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		97ACF99DC1924FAD99786328 /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		1D5E7D5D6FB243A18396DBF1 /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		C24CE1AB9B8E4D33881C7C1A /* RareloopAppVersion.m */ = {isa = PBXFileReference; name = "RareloopAppVersion.m"; path = "cordova-plugin-appversion/RareloopAppVersion.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		581CEDC5E5FA449AAD1D3471 /* RareloopAppVersion.h */ = {isa = PBXFileReference; name = "RareloopAppVersion.h"; path = "cordova-plugin-appversion/RareloopAppVersion.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +280,8 @@
 				3DE080A2E32645EF940C9A4C /* CDVInAppBrowser.h */,
 				97ACF99DC1924FAD99786328 /* CDVDevice.m */,
 				1D5E7D5D6FB243A18396DBF1 /* CDVDevice.h */,
+				C24CE1AB9B8E4D33881C7C1A /* RareloopAppVersion.m */,
+				581CEDC5E5FA449AAD1D3471 /* RareloopAppVersion.h */,
 			);
 			name = Plugins;
 			path = "KesMobile/Plugins";
@@ -409,6 +414,7 @@
 				60A1981F74DE47EF9D73873E /* CDVVibration.m in Sources */,
 				DB2EB63F427D48C08E0229B6 /* CDVInAppBrowser.m in Sources */,
 				90D1FBA1E9684C66BFF75902 /* CDVDevice.m in Sources */,
+				EE3F9ED8406C4B7292743127 /* RareloopAppVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

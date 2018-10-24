@@ -2,14 +2,25 @@ routes = [
   {
     path: '/',
     url: './index.html',
+    on: {
+      pageAfterIn: function (e, page) {
+        // do something after page gets into the view
+        var app = page.app;
+        app.methods.refreshGrid();
+        
+      },
+      pageInit: function (e, page) {
+        // do something when page initialized
+      },
+    }
   },
   {
     path: '/about/',
     url: './pages/about.html',
   },
   {
-    path: '/form/',
-    url: './pages/form.html',
+    path: '/config/',
+    componentUrl: './pages/config.html',
   },
   // Page Loaders & Router
   {
@@ -23,6 +34,10 @@ routes = [
   {
     path: '/bill/:billId/',
     componentUrl: './pages/bill.html',
+  },
+  {
+    path: '/del/:billId/',
+    componentUrl: './pages/del.html',
   },
   {
     path: '/request-and-load/user/:userId/',
@@ -74,6 +89,7 @@ routes = [
       }, 1000);
     },
   },
+
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',

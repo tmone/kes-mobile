@@ -145,6 +145,22 @@ module.exports = [
     "clobbers": [
       "device"
     ]
+  },
+  {
+    "id": "cordova-plugin-appversion.RareloopAppVersion",
+    "file": "plugins/cordova-plugin-appversion/www/app-version.js",
+    "pluginId": "cordova-plugin-appversion",
+    "clobbers": [
+      "AppVersion"
+    ]
+  },
+  {
+    "id": "cordova-plugin-android-update.AppUpdate",
+    "file": "plugins/cordova-plugin-android-update/www/AppUpdate.js",
+    "pluginId": "cordova-plugin-android-update",
+    "clobbers": [
+      "AppUpdate"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -163,7 +179,9 @@ module.exports.metadata =
   "phonegap-plugin-barcodescanner": "8.0.0",
   "phonegap-plugin-push": "2.1.3",
   "cordova-plugin-inappbrowser": "3.0.0",
-  "cordova-plugin-device": "2.0.2"
+  "cordova-plugin-device": "2.0.2",
+  "cordova-plugin-appversion": "1.0.0",
+  "cordova-plugin-android-update": "1.0.1"
 };
 // BOTTOM OF METADATA
 });

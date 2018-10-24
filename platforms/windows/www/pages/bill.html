@@ -14,137 +14,140 @@
     <div class="page-content" style="padding-bottom:50px;">
       <div class="block-title">Thông tin người nhận</div>
       <div class="list">
-          <ul>
-            <li>
-              <span class="item-content">
-                <div class="item-media"><a class="link link-icon"><i class="f7-icons">person</i></a></div>
-                <div class="item-inner">
-                  <div class="item-title">
-                    <div class="item-header">Liên hệ</div>
-                    {{$root.lastChoice.Recipient_Name}}&nbsp;
-                    <div class="item-footer">{{$root.lastChoice.Recipient_Contact_Person}}</div>
-                  </div>                  
+        <ul>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon"><i class="f7-icons">person</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Liên hệ</div>
+                  {{$root.lastChoice.Recipient_Name}}&nbsp;
+                  <div class="item-footer">{{$root.lastChoice.Recipient_Contact_Person}}</div>
                 </div>
-              </span>
-            </li>
-            <li>
-              <span class="item-content">
-                <div class="item-media"><a class="link link-icon" @click="showLocation('{{$root.lastChoice.Recipient_Address}}')"><i class="f7-icons">home</i></a></div>
-                <div class="item-inner">
-                  <div class="item-title">
-                    <div class="item-header">Địa chỉ</div>
-                    {{$root.lastChoice.Recipient_Address}}&nbsp;
-                  </div>                  
+              </div>
+            </span>
+          </li>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon" @click="showLocation('{{$root.lastChoice.Recipient_Address}}')"><i
+                    class="f7-icons">home</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Địa chỉ</div>
+                  {{$root.lastChoice.Recipient_Address}}&nbsp;
                 </div>
+              </div>
               </a>
-            </li>
-            <li>
-              <span class="item-content">
-                <div class="item-media"><a class="link link-icon" @click="callPhone('{{$root.lastChoice.Recipient_Phone_No}}')"><i class="f7-icons">phone_round</i></a></div>
-                <div class="item-inner">
-                  <div class="item-title">
-                    <div class="item-header">Điện thoại</div>
-                    {{$root.lastChoice.Recipient_Phone_No}}&nbsp;
-                  </div>                  
+          </li>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon" @click="callPhone('{{$root.lastChoice.Recipient_Phone_No}}')"><i
+                    class="f7-icons">phone_round</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Điện thoại</div>
+                  {{$root.lastChoice.Recipient_Phone_No}}&nbsp;
                 </div>
+              </div>
               </a>
-            </li>
-          </ul>
-        </div>
-        <div class="block-title">Thông tin Hàng hóa</div>
-        <div class="list">
-            <ul>
-              <li>
-                <span class="item-content">
-                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">money_dollar</i></a></div>
-                  <div class="item-inner">
-                    <div class="item-title">
-                      <div class="item-header">Thu Hộ</div>
-                      {{$root.lastChoice.COD_Amount}}&nbsp;
-                    </div>                  
-                  </div>
-                </span>
-              </li>
-              <li>
-                <span class="item-content">
-                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">tags</i></a></div>
-                  <div class="item-inner">
-                    <div class="item-title">
-                      <div class="item-header">Ghi chú</div>
-                      {{$root.lastChoice.Remark}}&nbsp;
-                    </div>                  
-                  </div>
-                </a>
-              </li>
-              <li>
-                <span class="item-content">
-                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">layers</i></a></div>
-                  <div class="item-inner">
-                    <div class="item-title">
-                      <div class="item-header">Giao hàng</div>
-                      {{$root.lastChoice.Special_Delivery_Remark}}&nbsp;
-                    </div>                  
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="block-title">Thông tin người giao</div>
-          <div class="list">
-            <ul>
-              <li>
-                <span class="item-content">
-                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">person</i></a></div>
-                  <div class="item-inner">
-                    <div class="item-title">
-                      <div class="item-header">Liên hệ</div>
-                      {{$root.lastChoice.Sender_Name}}&nbsp;
-                      <div class="item-footer">{{$root.lastChoice.Sender_Contact_Person}}</div>
-                    </div>                  
-                  </div>
-                </span>
-              </li>
-              <li>
-                <span class="item-content">
-                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">home</i></a></div>
-                  <div class="item-inner">
-                    <div class="item-title">
-                      <div class="item-header">Địa chỉ</div>
-                      {{$root.lastChoice.Sender_Address}}&nbsp;
-                    </div>                  
-                  </div>
-                </a>
-              </li>
-              <li>
-                <span class="item-content">
-                  <div class="item-media"><a class="link link-icon" @click="callPhone('{{$root.lastChoice.Sender_Phone_No}}')"><i class="f7-icons">phone_round</i></a></div>
-                  <div class="item-inner">
-                    <div class="item-title">
-                      <div class="item-header">Điện thoại</div>
-                      {{$root.lastChoice.Sender_Phone_No}}&nbsp;
-                    </div>                  
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-    </div>
+          </li>
+        </ul>
+      </div>
+      <div class="block-title">Thông tin Hàng hóa</div>
+      <div class="list">
+        <ul>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon"><i class="f7-icons">money_dollar</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Thu Hộ</div>
+                  {{$root.lastChoice.COD_Amount}}&nbsp;
+                </div>
+              </div>
+            </span>
+          </li>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon"><i class="f7-icons">tags</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Ghi chú</div>
+                  {{$root.lastChoice.Remark}}&nbsp;
+                </div>
+              </div>
+              </a>
+          </li>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon"><i class="f7-icons">layers</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Giao hàng</div>
+                  {{$root.lastChoice.Special_Delivery_Remark}}&nbsp;
+                </div>
+              </div>
+              </a>
+          </li>
+        </ul>
+      </div>
+      <div class="block-title">Thông tin người giao</div>
+      <div class="list">
+        <ul>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon"><i class="f7-icons">person</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Liên hệ</div>
+                  {{$root.lastChoice.Sender_Name}}&nbsp;
+                  <div class="item-footer">{{$root.lastChoice.Sender_Contact_Person}}</div>
+                </div>
+              </div>
+            </span>
+          </li>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon"><i class="f7-icons">home</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Địa chỉ</div>
+                  {{$root.lastChoice.Sender_Address}}&nbsp;
+                </div>
+              </div>
+              </a>
+          </li>
+          <li>
+            <span class="item-content">
+              <div class="item-media"><a class="link link-icon" @click="callPhone('{{$root.lastChoice.Sender_Phone_No}}')"><i
+                    class="f7-icons">phone_round</i></a></div>
+              <div class="item-inner">
+                <div class="item-title">
+                  <div class="item-header">Điện thoại</div>
+                  {{$root.lastChoice.Sender_Phone_No}}&nbsp;
+                </div>
+              </div>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>    
     <div class="fab fab-extended fab-center-bottom color-green">
-      <a href="/pod/{{$route.params.billId}}/">
+      <a href="#" @click="addPOD('{{$route.params.billId}}')">
         <i class="icon f7-icons ios-only">check</i>
         <i class="icon material-icons md-only">check</i>
         <div class="fab-text">Giao Thành Công</div>
       </a>
     </div>
     <div class="fab fab-extended fab-left-bottom color-red">
-      <a href="/delay/{{$route.params.billId}}/">
+      <a href="/del/{{$route.params.billId}}/">
         <i class="icon f7-icons ios-only">alarm</i>
         <i class="icon material-icons md-only">alarm</i>
         <div class="fab-text">DEL</div>
       </a>
     </div>
-    <div class="fab fab-extended fab-right-bottom color-pink">
-      <a href="/return/{{$route.params.billId}}/">
+    <div class="fab fab-extended fab-right-bottom color-orange">
+      <a href="#" @click="addRET('{{$route.params.billId}}')">
         <i class="icon f7-icons ios-only">reply</i>
         <i class="icon material-icons md-only">reply</i>
         <div class="fab-text">RET</div>
@@ -174,11 +177,11 @@
     },
     beforeDestroy() {
       console.log('componentBeforeDestroy', this);
-      
+
     },
     destroyed() {
       console.log('componentDestroyed', this);
-     
+
     },
     // Component Data
     data: function () {
@@ -192,46 +195,163 @@
     // Component Methods
     methods: {
       callPhone: function (a) {
-        if(a){
+        if (a) {
           var platform = device.platform;
-          if(platform!="browser"){
-            window.plugins.CallNumber.callNumber(function(result){
+          if (platform != "browser") {
+            window.plugins.CallNumber.callNumber(function (result) {
 
-            }, function(error){
+            }, function (error) {
 
-            },a,true);
-          }else{
-            var ref = cordova.InAppBrowser.open('tel:'+a, '_system');
+            }, a, true);
+          } else {
+            var ref = cordova.InAppBrowser.open('tel:' + a, '_system');
           }
         }
       },
-      showLocation: function(a){
+      showLocation: function (a) {
         //if(a){
-          var ref = cordova.InAppBrowser.open('http://map.google.com?q='+a, '_system');
+        var ref = cordova.InAppBrowser.open('http://map.google.com?q=' + a, '_system');
         //}
-      }
+      },
+      addPOD: function (a) {
+        app.dialog.prompt('Nhập đầy đủ họ tên nhận hàng?', function (name) {
+          if (name && name.length > 3) {
+            app.dialog.confirm('Bạn chắc chắn đã giao cho <span style="color:orange">' + name + '</span>?', function () {
+              // Show Preloader
+              app.preloader.show();
+
+              // User ID from request
+              var billId = a;
+              var data = app.data;
+              var bI = data.lastChoice;
+              $.ajax({
+                method: "POST",
+                url: app.data.serverUrl + "/api/MPOD/",
+                data: {
+                  values: JSON.stringify({
+                    Consignment_ID: bI.ID,
+                    Tracking_Datetime: new Date().toJSON(),
+                    Status_ID: 21, //POD
+                    Person_Incharge: data.user.user_name,
+                    Location_DC_ID: bI.DC_ID,
+                    Delivery_Route_ID: bI.Route_ID,
+                    Batch_No: bI.Batch_No,
+                    Consignee_Name: name,
+                    Remark: bI.Remark,
+                    Active_Status: 'Y',
+                    Created_By: data.user.user_name,
+                    Created_Date: new Date().toJSON(),
+                    //Truck_ID:'',
+                    Last_Source: 'KES-MOBILE',
+                    Last_Client_Name: device.platform,
+                    //Last_Access_IP:'',
+                    GEO_Location: JSON.stringify(data.geoLocation),
+                    CODC_Amount: bI.COD_Amount,
+                    Consignment_No: billId
+                  })
+                },
+                success: function (rs) {
+                  // Resolve route to load page
+                  app.gridComponent.refresh();
+                  app.router.back('/');
+                },
+                error: function (err) {
+                  app.toast.create({
+                    text: "Error: " + err,
+                    closeTimeout: 2000,
+                  }).open();
+                }
+              })
+                .done(function (msg) {
+                  // Hide Preloader
+                  app.preloader.hide();
+                });
+            });
+          } else {
+            app.toast.create({
+              text: "Lỗi: Tên '" + name + "' quá ngắn",
+              closeTimeout: 2000,
+            }).open();
+          }
+
+        });
+      },
+      addRET: function (a) {
+        app.dialog.confirm('Bạn chắc chắn trả lại đơn <span style="color:orange">' + a + '</span>?', function () {
+          // Show Preloader
+          app.preloader.show();
+
+          // User ID from request
+          var billId = a;
+          var data = app.data;
+          var bI = data.lastChoice;
+          $.ajax({
+            method: "POST",
+            url: app.data.serverUrl + "/api/MPOD/",
+            data: {
+              values: JSON.stringify({
+                Consignment_ID: bI.ID,
+                Tracking_Datetime: new Date().toJSON(),
+                Status_ID: 74, //PODR
+                Person_Incharge: data.user.user_name,
+                Location_DC_ID: bI.DC_ID,
+                Delivery_Route_ID: bI.Route_ID,
+                Batch_No: bI.Batch_No,
+                //Consignee_Name: name,
+                Remark: bI.Remark,
+                Active_Status: 'Y',
+                Created_By: data.user.user_name,
+                Created_Date: new Date().toJSON(),
+                //Truck_ID:'',
+                Last_Source: 'KES-MOBILE',
+                Last_Client_Name: device.platform,
+                //Last_Access_IP:'',
+                GEO_Location: JSON.stringify(data.geoLocation),
+                CODC_Amount: bI.COD_Amount,
+                Consignment_No: billId
+              })
+            },
+            success: function (rs) {
+              // Resolve route to load page
+              app.gridComponent.refresh();
+              app.router.back('/');
+            },
+            error: function (err) {
+              app.toast.create({
+                text: "Lỗi: " + err,
+                closeTimeout: 2000,
+              }).open();
+            }
+          })
+            .done(function (msg) {
+              // Hide Preloader
+              app.preloader.hide();
+            });
+        });
+
+      },
     },
     // Page Events
     on: {
-      pageMounted: function(e, page) {
+      pageMounted: function (e, page) {
         console.log('pageMounted', page);
       },
-      pageInit: function(e, page) {
+      pageInit: function (e, page) {
         console.log('pageInit', page);
       },
-      pageBeforeIn: function(e, page) {
+      pageBeforeIn: function (e, page) {
         console.log('pageBeforeIn', page);
       },
-      pageAfterIn: function(e, page) {
+      pageAfterIn: function (e, page) {
         console.log('pageAfterIn', page);
       },
-      pageBeforeOut: function(e, page) {
+      pageBeforeOut: function (e, page) {
         console.log('pageBeforeOut', page);
       },
-      pageAfterOut: function(e, page) {
+      pageAfterOut: function (e, page) {
         console.log('pageAfterOut', page);
       },
-      pageBeforeRemove: function(e, page) {
+      pageBeforeRemove: function (e, page) {
         console.log('pageBeforeRemove', page);
       },
     }

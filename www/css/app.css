@@ -21,3 +21,27 @@
 .fa{
     font-size: 32px;
 }
+.badge-fix{
+    text-align:center;
+    min-width:32px;
+    border-radius:12px;
+}
+.after-fix{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.card-header-fix{
+    /* color:white; */
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.link-icon-fix{
+    top:-9px;
+}
+.size-40{
+    font-size: 40px;
+}
+.card-content-fix{
+    overflow: hidden;
+}
