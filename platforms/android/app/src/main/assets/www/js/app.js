@@ -88,11 +88,29 @@ var onGeoSuccess = function(position) {
 function onGeoError(error) {
   
 }
-
-
 ///END GEO
 
+function checkConnection() {
+  var networkState = navigator.connection.type;
 
+  var states = {};
+  states[Connection.UNKNOWN]  = 'Unknown connection';
+  states[Connection.ETHERNET] = 'Ethernet connection';
+  states[Connection.WIFI]     = 'WiFi connection';
+  states[Connection.CELL_2G]  = 'Cell 2G connection';
+  states[Connection.CELL_3G]  = 'Cell 3G connection';
+  states[Connection.CELL_4G]  = 'Cell 4G connection';
+  states[Connection.CELL]     = 'Cell generic connection';
+  states[Connection.NONE]     = 'No network connection';
+
+  //alert('Connection type: ' + states[networkState]);
+  if(networkState==Connection.NONE){
+    app.toast.create({
+      text: "Không có tín hiệu mạng",        
+      closeTimeout: 2000,
+    }).open();
+  }  
+}
 
 
 
@@ -100,7 +118,11 @@ function onGeoError(error) {
 //////////////////////////////////////////
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
+  if(navigator.connection.type == connection.NONE){
+    alert("Không có tín hiệu mạng!");
+  }
   // be certain to make an unique reference String for each variable!
+  setInterval(checkConnection,30000);
   NativeStorage.getItem("userInfo", getUserInfoSuccess, getUserInfoError);
   app.store = DevExpress.data.AspNet.createStore({
     key: "Consignment_No",
