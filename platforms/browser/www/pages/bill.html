@@ -29,7 +29,7 @@
             </li>
             <li>
               <span class="item-content">
-                <div class="item-media"><a href="http://map.google.com?q={{$root.lastChoice.Recipient_Address}}" class="link external"><i class="f7-icons">home</i></a></div>
+                <div class="item-media"><a class="link link-icon" @click="showLocation('{{$root.lastChoice.Recipient_Address}}')"><i class="f7-icons">home</i></a></div>
                 <div class="item-inner">
                   <div class="item-title">
                     <div class="item-header">Địa chỉ</div>
@@ -40,7 +40,7 @@
             </li>
             <li>
               <span class="item-content">
-                <div class="item-media"><a href="tel:{{$root.lastChoice.Recipient_Contact_Person}}" class="link external"><i class="f7-icons">phone_round</i></a></div>
+                <div class="item-media"><a class="link link-icon" @click="callPhone('{{$root.lastChoice.Recipient_Phone_No}}')"><i class="f7-icons">phone_round</i></a></div>
                 <div class="item-inner">
                   <div class="item-title">
                     <div class="item-header">Điện thoại</div>
@@ -106,7 +106,7 @@
               </li>
               <li>
                 <span class="item-content">
-                  <div class="item-media"><a href="http://map.google.com?q={{$root.lastChoice.Recipient_Address}}" class="link external"><i class="f7-icons">home</i></a></div>
+                  <div class="item-media"><a class="link link-icon"><i class="f7-icons">home</i></a></div>
                   <div class="item-inner">
                     <div class="item-title">
                       <div class="item-header">Địa chỉ</div>
@@ -117,7 +117,7 @@
               </li>
               <li>
                 <span class="item-content">
-                  <div class="item-media"><a href="tel:{{$root.lastChoice.Recipient_Contact_Person}}" class="link external"><i class="f7-icons">phone_round</i></a></div>
+                  <div class="item-media"><a class="link link-icon" @click="callPhone('{{$root.lastChoice.Sender_Phone_No}}')"><i class="f7-icons">phone_round</i></a></div>
                   <div class="item-inner">
                     <div class="item-title">
                       <div class="item-header">Điện thoại</div>
@@ -174,9 +174,11 @@
     },
     beforeDestroy() {
       console.log('componentBeforeDestroy', this);
+      
     },
     destroyed() {
       console.log('componentDestroyed', this);
+     
     },
     // Component Data
     data: function () {
@@ -189,10 +191,25 @@
     },
     // Component Methods
     methods: {
-      openAlert: function () {
-        var self = this;
-        self.$app.dialog.alert('Hello World');
+      callPhone: function (a) {
+        if(a){
+          var platform = device.platform;
+          if(platform!="browser"){
+            window.plugins.CallNumber.callNumber(function(result){
+
+            }, function(error){
+
+            },a,true);
+          }else{
+            var ref = cordova.InAppBrowser.open('tel:'+a, '_system');
+          }
+        }
       },
+      showLocation: function(a){
+        //if(a){
+          var ref = cordova.InAppBrowser.open('http://map.google.com?q='+a, '_system');
+        //}
+      }
     },
     // Page Events
     on: {

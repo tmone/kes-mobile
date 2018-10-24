@@ -17,6 +17,7 @@ var app  = new Framework7({
     lastChoice:{},
   },
   store: null,
+  gridComponent: null,
   // App root methods
   methods: {
     helloWorld: function () {
@@ -116,7 +117,7 @@ $$(document).on('deviceready', function() {
     navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
   },60000);
 
-  let element = $("#grid-data").dxDataGrid({
+  app.gridComponent = $("#grid-data").dxDataGrid({
     dataSource:app.store,
     filterRow: {
       visible: true
@@ -129,6 +130,8 @@ $$(document).on('deviceready', function() {
     },
     hoverStateEnabled: true,
     showBorders: true,
+    showColumnLines:false,
+    showRowLines:false,
     columns:[
       {
         dataField:"Id",
@@ -140,7 +143,13 @@ $$(document).on('deviceready', function() {
         dataField:"Consignment_No",
         caption:"Số VĐ",
         headerCellTemplate:function(head,info){
-          head.append('<strong>Số vận đơn</strong>',$('<span id="totalCount" class="number-sync">'));
+          var tmp=`<div class="item-content">
+            <div class="item-inner">              
+              <div class="item-before" style="float:left; margin-right:10px"><span id="totalCount" class="badge color-green">0</span></div>
+              <strong>Số vận đơn</strong>
+            </div>
+          </div>`;
+          head.append(tmp);
           app.store.totalCount().then(function(a){
             var div = $('#totalCount').text(a);
             if(a){
@@ -149,6 +158,26 @@ $$(document).on('deviceready', function() {
               $(div).addClass("synced");
             }
           });
+        },
+        cellTemplate:function(container, options){
+          let tmp =`<div class="card">
+            <div class="card-header">Card header</div>
+            <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.</div>
+            <div class="card-footer">Card Footer</div>
+          </div>`;
+          $("<div class='card'>")
+          .append(
+            $("<div class='card-header'>").text(options.data.Consignment_No),
+            $("<div class='card-content card-content-padding'>").append(
+              $("<div>").text(options.data.Recipient_Name),
+              $("<div>").text(options.data.Recipient_Address),
+              $("<div>").text(options.data.Recipient_Phone_No),
+              $("<div>").text(options.data.Remark),
+            ),
+            //$("<div class='card-footer'>").text(options.data.Est_Delivery_Date),
+            // $("<img>", { "src": options.value })
+          ).appendTo(container);
+          $(container).css("padding","0px");
         }
       }
     ],
@@ -203,12 +232,23 @@ $$('#dang-xuat').on('click', function () {
 $$('.scan-barcode').on('click', function () {    
   cordova.plugins.barcodeScanner.scan(
     function (result) {
+      let a = result.text;
         // alert("We got a barcode\n" +
         //       "Result: " + result.text + "\n" +
         //       "Format: " + result.format + "\n" +
         //       "Cancelled: " + result.cancelled);
+        if(app.gridComponent){
+          app.gridComponent.selectRows(a);
 
-        mainView.router.navigate("/bill/"+result.text+"/");
+          if(app.gridComponent.getSelectedRowKeys().filter(x=>x==a).length>0){
+            mainView.router.navigate("/bill/"+a+"/");
+          }else{
+            app.toast.create({
+              text: "Không tìm thấy "+a,        
+              closeTimeout: 2000,
+            }).open();
+          }
+        }        
     },
     function (error) {
         alert("Lỗi: " + error);

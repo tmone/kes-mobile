@@ -224,6 +224,35 @@ module.exports = [
         "merges": [
             "navigator"
         ]
+    },
+    {
+        "id": "cordova-plugin-inappbrowser.inappbrowser",
+        "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+        "pluginId": "cordova-plugin-inappbrowser",
+        "clobbers": [
+            "cordova.InAppBrowser.open",
+            "window.open"
+        ]
+    },
+    {
+        "id": "cordova-plugin-inappbrowser.InAppBrowserProxy",
+        "file": "plugins/cordova-plugin-inappbrowser/src/windows/InAppBrowserProxy.js",
+        "pluginId": "cordova-plugin-inappbrowser",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-device.device",
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
+    },
+    {
+        "id": "cordova-plugin-device.DeviceProxy",
+        "file": "plugins/cordova-plugin-device/src/windows/DeviceProxy.js",
+        "pluginId": "cordova-plugin-device",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -240,7 +269,9 @@ module.exports.metadata =
     "cordova-plugin-geolocation": "4.0.1",
     "phonegap-plugin-barcodescanner": "8.0.0",
     "cordova-plugin-camera": "4.0.3",
-    "cordova-plugin-vibration": "3.1.0"
+    "cordova-plugin-vibration": "3.1.0",
+    "cordova-plugin-inappbrowser": "3.0.0",
+    "cordova-plugin-device": "2.0.2"
 };
 // BOTTOM OF METADATA
 });

@@ -128,6 +128,23 @@ module.exports = [
     "clobbers": [
       "PushNotification"
     ]
+  },
+  {
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
+    "clobbers": [
+      "cordova.InAppBrowser.open",
+      "window.open"
+    ]
+  },
+  {
+    "id": "cordova-plugin-device.device",
+    "file": "plugins/cordova-plugin-device/www/device.js",
+    "pluginId": "cordova-plugin-device",
+    "clobbers": [
+      "device"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -144,7 +161,9 @@ module.exports.metadata =
   "cordova-plugin-vibration": "3.1.0",
   "cordova-plugin-whitelist": "1.3.3",
   "phonegap-plugin-barcodescanner": "8.0.0",
-  "phonegap-plugin-push": "2.1.3"
+  "phonegap-plugin-push": "2.1.3",
+  "cordova-plugin-inappbrowser": "3.0.0",
+  "cordova-plugin-device": "2.0.2"
 };
 // BOTTOM OF METADATA
 });
