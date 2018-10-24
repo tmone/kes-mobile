@@ -32,7 +32,7 @@
               <div class="item-media"><a class="link link-icon" @click="showLocation('{{$root.lastChoice.Recipient_Address}}')"><i
                     class="f7-icons">home</i></a></div>
               <div class="item-inner">
-                <div class="item-title">
+                <div class="item-title" style="word-wrap:break-word;font-size: 10pt">
                   <div class="item-header">Địa chỉ</div>
                   {{$root.lastChoice.Recipient_Address}}&nbsp;
                 </div>
@@ -110,7 +110,7 @@
             <span class="item-content">
               <div class="item-media"><a class="link link-icon"><i class="f7-icons">home</i></a></div>
               <div class="item-inner">
-                <div class="item-title">
+                <div class="item-title" >
                   <div class="item-header">Địa chỉ</div>
                   {{$root.lastChoice.Sender_Address}}&nbsp;
                 </div>
@@ -197,7 +197,7 @@
     // Component Methods
     methods: {
       callPhone: function (a) {
-        if (a) {
+        
           var platform = device.platform;
           if (platform != "browser") {
             window.plugins.CallNumber.callNumber(function (result) {
@@ -208,7 +208,7 @@
           } else {
             var ref = cordova.InAppBrowser.open('tel:' + a, '_system');
           }
-        }
+        
       },
       showLocation: function (a) {
         //if(a){
