@@ -90,7 +90,7 @@
                     $$('.begindownload').show();
                     $$('downloading').hide();
                 });
-                if (app.device.android || app.device.ios) {
+                if (false){ //app.device.android || app.device.ios) {
                     downloader.init({ folder: "KesMobile", wifiOnly: true });
                     document.addEventListener("DOWNLOADER_downloadSuccess", function (event) {
                         var data = event.data;
