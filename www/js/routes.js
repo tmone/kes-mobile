@@ -57,7 +57,7 @@ routes = [
       }).load().done(function (data) {
         var _reason = [];
         if (data) {
-          _reason = data.filter(x => x.Status_ID == 20 );
+          _reason = data.filter(x => x.Status_ID == 20);
         }
         resolve(
           {
@@ -101,6 +101,47 @@ routes = [
           {
             context: {
               _route: _route,
+            }
+          }
+        );
+        // Hide Preloader
+        app.preloader.hide();
+      });
+    },
+  },
+  {
+    path: '/update/',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      //var userId = routeTo.params.userId;      
+      app.request.get(app.data.serverUrl + "/version.xml", function (data) {
+        //console.log(data);
+        debugger;
+        var xmlDoc = $.parseXML(data);
+        var $xml = $(xmlDoc);
+        var $version = +$xml.find("version").text();
+        var $url = $xml.find("url").text();
+        var $name = $xml.find("name").text();        
+        resolve(
+          {
+            componentUrl: './pages/update.html',
+          },
+          {
+            context: {
+              _data: {
+                version: $version,
+                url: $url,
+                name: $name
+              },
             }
           }
         );

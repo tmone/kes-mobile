@@ -17,7 +17,7 @@ var app = new Framework7({
     serverUrl: "http://210.211.121.146:30000",
     pushBill: true,
     geoLocation: {},    
-    version: 18,
+    version: 17,
     signal: true,
   },
   store: null,

@@ -4,5 +4,6 @@
     "AudioToolbox.framework": 2,
     "CoreLocation.framework": 2,
     "ImageIO.framework": 1,
-    "AVFoundation.framework": 1
+    "AVFoundation.framework": 1,
+    "libz.dylib": 1
 }
