@@ -125,7 +125,7 @@
       //var userId = routeTo.params.userId;      
       app.request.get(app.data.serverUrl + "/version.xml", function (data) {
         //console.log(data);
-        debugger;
+        //debugger;
         var xmlDoc = $.parseXML(data);
         var $xml = $(xmlDoc);
         var $version = +$xml.find("version").text();
@@ -146,6 +146,8 @@
           }
         );
         // Hide Preloader
+        app.preloader.hide();
+      },function(error){
         app.preloader.hide();
       });
     },

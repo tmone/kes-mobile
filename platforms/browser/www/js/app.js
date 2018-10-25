@@ -7,6 +7,7 @@ var app = new Framework7({
   id: 'com.kerryexpress.kesmobile', // App bundle ID
   name: 'KesMobile', // App name
   theme: 'auto', // Automatic theme detection
+  version: 19,
   // App root data
   data: {
     user: {
@@ -16,8 +17,7 @@ var app = new Framework7({
     lastChoice: {},
     serverUrl: "http://210.211.121.146:30000",
     pushBill: true,
-    geoLocation: {},    
-    version: 17,
+    geoLocation: {},
     signal: true,
   },
   store: null,
@@ -125,7 +125,7 @@ var app = new Framework7({
                       $('#totalCountPOD').text(cPOD);
                       $('#totalCountRET').text(cRET);
                       $('#totalCountDEL').text(cDEL);
-                      $('#totalCountNOT').text(cNOT);                      
+                      $('#totalCountNOT').text(cNOT);
                     });
                   }
                   $$('#search').on('click', function () {
@@ -344,11 +344,22 @@ $$(document).on('deviceready', function () {
   // be certain to make an unique reference String for each variable!
   checkConnection();
 
-  // window.AppUpdate.checkAppUpdate(function () {
+  //check update
+  let t = new Date().getTime();
+  app.request.get(app.data.serverUrl + "/api/Version", function (data) {
+    //debugger;
+    var dat = JSON.parse(JSON.parse(data));
+    if (dat.version > app.version ) {
+      app.toast.create({
+        text: "<strong>Có bản cập nhập mới... </strong><a href='" + dat.url + "'><i class='f7-icons'>cloud_download_fill</i> Tải về</a>.<br>Phiên bản: " + dat.version + ". Ngày: "+dat.date_upload,
+        position: 'top',
+        closeButton: true,
+        closeButtonText: '<i class="f7-icons">close_round_fill</i>',        
+      }).open();
+    }
+  });
 
-  // }, function () {
-
-  // }, serverUrl + "/version.xml");
+  //end check update
 
   NativeStorage.getItem("config", function (result) {
     app.data.serverUrl = result.server || app.data.serverUrl;
@@ -397,7 +408,7 @@ $$('#my-login-screen .login-button').on('click', function () {
       };
       //debugger;
       NativeStorage.setItem("userInfo", obj, setUserInfoSuccess, setUserInfoError);
-      location.reload(); 
+      location.reload();
     } else {
       app.toast.create({
         text: "Thông tin đăng nhập không đúng",

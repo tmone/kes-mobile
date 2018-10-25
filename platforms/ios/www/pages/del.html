@@ -124,6 +124,7 @@
                                 });                     
                             },
                             error: function (err) {
+                                app.preloader.hide();
                                 app.toast.create({
                                     text: "Error: " + err,
                                     closeTimeout: 2000,

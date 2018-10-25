@@ -258,6 +258,7 @@
                   app.router.back('/');
                 },
                 error: function (err) {
+                  app.preloader.hide();
                   app.toast.create({
                     text: "Error: " + err,
                     closeTimeout: 2000,
@@ -319,6 +320,7 @@
               app.router.back('/');
             },
             error: function (err) {
+              app.preloader.hide();
               app.toast.create({
                 text: "Lỗi: " + err,
                 closeTimeout: 2000,

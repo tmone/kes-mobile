@@ -83,14 +83,14 @@
         // Component Methods
         methods: {
             update: function (url) {
-                $$('.begindownload').hide();
-                $$('downloading').show();
-                $$('stopdownload').on("click", function () {
-                    downloader.abort();
-                    $$('.begindownload').show();
-                    $$('downloading').hide();
-                });
-                if (app.device.android || app.device.ios) {
+                // $$('.begindownload').hide();
+                // $$('downloading').show();
+                // $$('stopdownload').on("click", function () {
+                //     downloader.abort();
+                //     $$('.begindownload').show();
+                //     $$('downloading').hide();
+                // });
+                if (false){ //app.device.android || app.device.ios) {
                     downloader.init({ folder: "KesMobile", wifiOnly: true });
                     document.addEventListener("DOWNLOADER_downloadSuccess", function (event) {
                         var data = event.data;
