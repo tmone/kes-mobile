@@ -76,7 +76,7 @@ var app = new Framework7({
           },
           {
             dataField: "Consignment_No",
-            allowSorting:false,
+            allowSorting: false,
             caption: "Số VĐ",
             headerCellTemplate: function (head, info) {
               var tmp = `<div class="item-content">
@@ -287,6 +287,7 @@ function checkConnection() {
 
   //alert('Connection type: ' + states[networkState]);
   if (networkState == Connection.NONE) {
+    app.data.signal = false;
     app.toast.create({
       text: "Không có tín hiệu mạng",
       closeTimeout: 2000,
@@ -358,7 +359,7 @@ $$(document).on('deviceready', function () {
     }
 
   });
-
+  navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
   ////
   setInterval(function () {
     navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);

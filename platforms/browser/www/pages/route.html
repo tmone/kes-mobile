@@ -144,9 +144,10 @@
         on: {
             pageMounted: function (e, page) {
                 console.log('pageMounted', page);
+                this.updatePostion();
             },
             pageInit: function (e, page) {
-                console.log('pageInit', page);
+                console.log('pageInit', page);                
             },
             pageBeforeIn: function (e, page) {
                 console.log('pageBeforeIn', page);
