@@ -50,7 +50,7 @@
             <a href="#" @click="trace">
                 <i class="icon f7-icons ios-only">navigation</i>
                 <i class="icon material-icons md-only">navigation</i>
-                <div class="fab-text">Tối ưu</div>
+                <!-- <div class="fab-text">Tối ưu</div> -->
             </a>
         </div>
     </div>
@@ -94,44 +94,33 @@
             }
         },
         // Component Methods
-        methods: {
-            trace: function () {
-
-
-
-            },
-        },
-        // Page Events
-        on: {
-            pageMounted: function (e, page) {
-                console.log('pageMounted', page);
-            },
-            pageInit: function (e, page) {
-                console.log('pageInit', page);
-            },
-            pageBeforeIn: function (e, page) {
-                console.log('pageBeforeIn', page);
-            },
-            pageAfterIn: function (e, page) {
-                console.log('pageAfterIn', page);
+        methods: {           
+            trace: function () {  
+                var _self = this;              
                 navigator.geolocation.getCurrentPosition(function (position) {
                     app.data.geolocation = position;
+                    _self.updatePostion();
                 }, function (error) {
                     app.toast.create({
                         text: "Tính năng này cần bật định vị GPS để hoạt động hiệu quả<br>" + error,
                         closeTimeout: 2000,
                     }).open();
                 });
+            },
+            updatePostion: function(){                
                 var markdb = [];                
-                markdb = this._route.map((x)=>{return {location:x.Recipient_Address}});
+                markdb = this._route.filter(x=>x.Recipient_Address).map((x)=>{return {location:x.Recipient_Address}});
                 var routedb = [];
-                routedb  = this._route.map(x=>x.Recipient_Address);
-                if(app.data.geolocation ){
+                routedb  = this._route.filter(x=>x.Recipient_Address).map(x=>x.Recipient_Address);
+                console.log(app.data.geolocation);
+                if(app.data.geolocation){
                     routedb.unshift([
-                        app.data.coords.latitude,
-                        app.data.coords.longitude,
+                        app.data.geolocation.coords.latitude,
+                        app.data.geolocation.coords.longitude,
                     ]);
                 }
+                //console.log(markdb);
+                //console.log(routedb);
                 $("#map").dxMap({
                     key:'AIzaSyDec3CO49CrYHEHS6fumUCS_NYOWmVrllk',
                     zoom: 14,
@@ -149,6 +138,22 @@
                         }
                     ]
                 });
+            }
+        },
+        // Page Events
+        on: {
+            pageMounted: function (e, page) {
+                console.log('pageMounted', page);
+            },
+            pageInit: function (e, page) {
+                console.log('pageInit', page);
+            },
+            pageBeforeIn: function (e, page) {
+                console.log('pageBeforeIn', page);
+            },
+            pageAfterIn: function (e, page) {
+                console.log('pageAfterIn', page);
+                this.updatePostion();                
             },
             pageBeforeOut: function (e, page) {
                 console.log('pageBeforeOut', page);
