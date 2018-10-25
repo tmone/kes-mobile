@@ -10,8 +10,8 @@ var app = new Framework7({
   // App root data
   data: {
     user: {
-      user_name: '53264',
-      password: '1',
+      user_name: null,
+      password: '****',
     },
     lastChoice: {},
     serverUrl: "http://210.211.121.146:30000",
@@ -35,6 +35,19 @@ var app = new Framework7({
       });
       app.methods.refreshGrid();
     },
+    updateStore:function(){
+      app.store = DevExpress.data.AspNet.createStore({
+        key: "Consignment_No",
+        loadUrl: app.data.serverUrl + "/api/MPOD/" + app.data.user.user_name + "?u=" + app.data.user.user_name + "&p=" + app.data.user.password,
+        //insertUrl: url + "/InsertOrder",
+        //updateUrl: url + "/UpdateOrder",
+        //deleteUrl: url + "/DeleteOrder",
+        requireTotalCount: true,
+        onBeforeSend: function (method, ajaxOptions) {
+          ajaxOptions.xhrFields = { withCredentials: true };
+        },
+      });
+    },
     refreshGrid: function () {
       app.gridComponent = $("#grid-data").dxDataGrid({
         dataSource: app.store,
@@ -52,7 +65,7 @@ var app = new Framework7({
         //   width: '100%',
         //   placeholder: "Tìm..."
         // },
-        hoverStateEnabled: true,
+        //hoverStateEnabled: true,
         showBorders: true,
         showColumnLines: false,
         showRowLines: false,
@@ -95,10 +108,16 @@ var app = new Framework7({
               </div>`;
               head.append(tmp);
               app.store.load().done(function (a) {
-                var cPOD = a.filter(x => x.PRO == 1).length || 0;
-                var cRET = a.filter(x => x.PRO == 2).length || 0;
-                var cDEL = a.filter(x => x.PRO == 3).length || 0;
-                var cNOT = a.filter(x => x.PRO == 4).length || 0;
+                var cPOD = 0;
+                var cRET = 0;
+                var cDEL = 0;
+                var cNOT = 0;
+                if(a){
+                  cPOD = a.filter(x => x.PRO == 1).length;
+                  cRET = a.filter(x => x.PRO == 2).length;
+                  cDEL = a.filter(x => x.PRO == 3).length;
+                  cNOT = a.filter(x => x.PRO == 4).length;
+                }
                 $('#totalCountPOD').text(cPOD);
                 $('#totalCountRET').text(cRET);
                 $('#totalCountDEL').text(cDEL);
@@ -225,9 +244,10 @@ var setUserInfoError = function (error) {
 var getUserInfoSuccess = function (obj) {
   //console.log(obj.name);
   //NativeStorage.remove("userInfo", removeSuccess, removeError);
-  if (obj) {
+  if (obj && obj.user && obj.user.length>4 && obj.key && obj.key!="****") {
     app.data.user.user_name = obj.user;
     app.data.user.password = obj.key;
+    app.methods.updateStore();
     $$("#user-name").text(obj.user);
     $$("#user-fullname").text(obj.fullname);
     $$("#last-login").text(obj.last);
@@ -235,10 +255,10 @@ var getUserInfoSuccess = function (obj) {
       $$("#user-image").attr("src", "img/sex/" + obj.sex + ".png");
     } else {
       $$("#user-image").attr("src", "img/sex/null.png");
-    }
+    }   
 
   } else {
-    app.loginScreen.open("#my-login-screen")
+    app.loginScreen.open("#my-login-screen");
   }
 };
 var getUserInfoError = function (error) {
@@ -336,18 +356,7 @@ $$(document).on('deviceready', function () {
     });
   });
 
-  NativeStorage.getItem("userInfo", getUserInfoSuccess, getUserInfoError);
-  app.store = DevExpress.data.AspNet.createStore({
-    key: "Consignment_No",
-    loadUrl: app.data.serverUrl + "/api/MPOD/" + app.data.user.user_name + "?u=" + app.data.user.user_name + "&p=" + app.data.user.password,
-    //insertUrl: url + "/InsertOrder",
-    //updateUrl: url + "/UpdateOrder",
-    //deleteUrl: url + "/DeleteOrder",
-    requireTotalCount: true,
-    onBeforeSend: function (method, ajaxOptions) {
-      ajaxOptions.xhrFields = { withCredentials: true };
-    },
-  });
+  NativeStorage.getItem("userInfo", getUserInfoSuccess, getUserInfoError);  
 
   DevExpress.data.AspNet.createStore({
     key: "ID",
@@ -365,6 +374,7 @@ $$(document).on('deviceready', function () {
     navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
   }, 60000);
 
+  app.methods.updateStore();
   app.methods.refreshGrid();
 
 });
@@ -386,9 +396,13 @@ $$('#my-login-screen .login-button').on('click', function () {
         sex: null,
         location: "Not set"
       };
+      //debugger;
       NativeStorage.setItem("userInfo", obj, setUserInfoSuccess, setUserInfoError);
+      app.data.user.user_name = obj.user_name;
+      app.data.user.password =obj.password;
       // Close login screen
       app.loginScreen.close('#my-login-screen');
+      app.methods.refreshGrid();
     } else {
       app.toast.create({
         text: "Thông tin đăng nhập không đúng",
@@ -399,8 +413,9 @@ $$('#my-login-screen .login-button').on('click', function () {
 });
 // Logout
 $$('#dang-xuat').on('click', function () {
-  NativeStorage.setItem("userInfo", null, setUserInfoSuccess, setUserInfoError);
-  app.loginScreen.open("#my-login-screen")
+  NativeStorage.setItem("userInfo", {}, setUserInfoSuccess, setUserInfoError);  
+  app.loginScreen.open("#my-login-screen");
+  location.reload();
 });
 
 // route
