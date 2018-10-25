@@ -16,8 +16,7 @@ var app = new Framework7({
     lastChoice: {},
     serverUrl: "http://210.211.121.146:30000",
     pushBill: true,
-    geoLocation: {},
-    SystemExceptionStore: [],
+    geoLocation: {},    
     version: 18,
     signal: true,
   },
@@ -367,16 +366,6 @@ $$(document).on('deviceready', function () {
 
   NativeStorage.getItem("userInfo", getUserInfoSuccess, getUserInfoError);
 
-  DevExpress.data.AspNet.createStore({
-    key: "ID",
-    loadUrl: app.data.serverUrl + "/api/SystemException" + "?u=" + app.data.user.user_name + "&p=" + app.data.user.password,
-    filter: ["Status_ID", "=", 20],
-  }).load().done(function (data) {
-    if (data) {
-      app.data.SystemExceptionStore = data.filter(x => x.Status_ID == 20);
-    }
-
-  });
   navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
   ////
   setInterval(function () {
@@ -384,7 +373,7 @@ $$(document).on('deviceready', function () {
   }, 60000);
 
   //app.methods.updateStore();
-  setTimeout(app.methods.refreshGrid, 1000);
+  app.methods.refreshGrid();
   //app.methods.refreshGrid();
 
 });

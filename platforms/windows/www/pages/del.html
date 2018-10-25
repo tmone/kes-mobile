@@ -15,7 +15,7 @@
             <div class="block-title">Lý do Delay</div>
             <div class="list">
                 <ul>
-                    {{#each $root.SystemExceptionStore}}
+                    {{#each _reason}}
                     <li>
                         <label class="item-radio item-content">
                             <input type="radio" name="reason-radio" value="{{this.ID}}" data-value="{{this.ID}}" data-des="{{this.Exception_TH_Desc}}" />

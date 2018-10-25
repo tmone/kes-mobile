@@ -7,7 +7,7 @@ routes = [
         // do something after page gets into the view
         var app = page.app;
         app.methods.refreshGrid();
-        
+
       },
       pageInit: function (e, page) {
         // do something when page initialized
@@ -30,14 +30,49 @@ routes = [
   {
     path: '/page-loader-component/:user/:userId/:posts/:postId/',
     componentUrl: './pages/page-loader-component.html',
-  },  
+  },
   {
     path: '/bill/:billId/',
     componentUrl: './pages/bill.html',
   },
   {
     path: '/del/:billId/',
-    componentUrl: './pages/del.html',
+    async: function (routeTo, routeFrom, resolve, reject) {
+      // Router instance
+      var router = this;
+
+      // App instance
+      var app = router.app;
+
+      // Show Preloader
+      app.preloader.show();
+
+      // User ID from request
+      //var userId = routeTo.params.userId;
+
+      DevExpress.data.AspNet.createStore({
+        key: "ID",
+        loadUrl: app.data.serverUrl + "/api/SystemException" + "?u=" + app.data.user.user_name + "&p=" + app.data.user.password,
+        filter: ["Status_ID", "=", 20],
+      }).load().done(function (data) {
+        var _reason = [];
+        if (data) {
+          _reason = data.filter(x => x.Status_ID == 20 );
+        }
+        resolve(
+          {
+            componentUrl: './pages/del.html',
+          },
+          {
+            context: {
+              _reason: _reason,
+            }
+          }
+        );
+        // Hide Preloader
+        app.preloader.hide();
+      });
+    },
   },
   {
     path: '/route/',
@@ -53,25 +88,25 @@ routes = [
 
       // User ID from request
       //var userId = routeTo.params.userId;
-     
+
       app.store.load().done(function (data) {
         var _route = [];
-          if (data) {
-              _route = data.filter(x => x.PRO > 2);
-          }
-          resolve(
-            {
-              componentUrl: './pages/route.html',
-            },
-            {
-              context: {
-                _route: _route,
-              }
+        if (data) {
+          _route = data.filter(x => x.PRO > 2);
+        }
+        resolve(
+          {
+            componentUrl: './pages/route.html',
+          },
+          {
+            context: {
+              _route: _route,
             }
-          );
-          // Hide Preloader
-          app.preloader.hide();
-      });      
+          }
+        );
+        // Hide Preloader
+        app.preloader.hide();
+      });
     },
   },
   {
