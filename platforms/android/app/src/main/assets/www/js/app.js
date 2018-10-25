@@ -35,7 +35,8 @@ var app = new Framework7({
       });
       app.methods.refreshGrid();
     },
-    updateStore:function(){
+    updateStore: function () {
+      //debugger;
       app.store = DevExpress.data.AspNet.createStore({
         key: "Consignment_No",
         loadUrl: app.data.serverUrl + "/api/MPOD/" + app.data.user.user_name + "?u=" + app.data.user.user_name + "&p=" + app.data.user.password,
@@ -49,178 +50,187 @@ var app = new Framework7({
       });
     },
     refreshGrid: function () {
-      app.gridComponent = $("#grid-data").dxDataGrid({
-        dataSource: app.store,
-        // filterRow: {
-        //   visible: true
-        // },
-        scrolling: {
-          mode: "virtual"
-        },
-        selection: {
-          mode: "single"
-        },
-        // searchPanel: {
-        //   visible: true,
-        //   width: '100%',
-        //   placeholder: "Tìm..."
-        // },
-        //hoverStateEnabled: true,
-        showBorders: true,
-        showColumnLines: false,
-        showRowLines: false,
-        columns: [
-          {
-            dataField: "Id",
-            allowSearch: false,
-            visible: false,
-            editOptions: {
-              visible: false
-            }
+      //debugger;
+      setTimeout(function () {
+        app.gridComponent = $("#grid-data").dxDataGrid({
+          dataSource: app.store,
+          // filterRow: {
+          //   visible: true
+          // },
+          scrolling: {
+            mode: "virtual"
           },
-          {
-            dataField: "PRO",
-            allowSearch: false,
-            visible: false,
-            editOptions: {
-              visible: false
+          selection: {
+            mode: "single"
+          },
+          // searchPanel: {
+          //   visible: true,
+          //   width: '100%',
+          //   placeholder: "Tìm..."
+          // },
+          //hoverStateEnabled: true,
+          showBorders: true,
+          showColumnLines: false,
+          showRowLines: false,
+          columns: [
+            {
+              dataField: "Id",
+              allowSearch: false,
+              visible: false,
+              editOptions: {
+                visible: false
+              }
             },
-            sortOrder: "desc"
-          },
-          {
-            dataField: "Consignment_No",
-            allowSorting: false,
-            caption: "Số VĐ",
-            headerCellTemplate: function (head, info) {
-              var tmp = `<div class="item-content">
-                <div class="item-inner">    
-                  <div class="item-title"><strong>Số vận đơn</strong></div>         
-                  <div class="item-after after-fix">
-                    <span id="totalCountNOT" class="badge badge-fix">0</span>
-                    <span id="totalCountDEL" class="badge color-red badge-fix">0</span>
-                    <span id="totalCountPOD" class="badge color-green badge-fix">0</span>
-                    <span id="totalCountRET" class="badge color-orange badge-fix">0</span>
-                    <a id="search" href="#" >
-                      <span id="totalCountRET" class="badge color-blue badge-fix"><i class="f7-icons" style="font-size:12px">search</i></span>
-                    </a>
-                  </div>                  
-                </div>
-              </div>`;
-              head.append(tmp);
-              app.store.load().done(function (a) {
-                var cPOD = 0;
-                var cRET = 0;
-                var cDEL = 0;
-                var cNOT = 0;
-                if(a){
-                  cPOD = a.filter(x => x.PRO == 1).length;
-                  cRET = a.filter(x => x.PRO == 2).length;
-                  cDEL = a.filter(x => x.PRO == 3).length;
-                  cNOT = a.filter(x => x.PRO == 4).length;
-                }
-                $('#totalCountPOD').text(cPOD);
-                $('#totalCountRET').text(cRET);
-                $('#totalCountDEL').text(cDEL);
-                $('#totalCountNOT').text(cNOT);
-                $$('#search').on('click', function () {
-                  app.dialog.prompt('Tìm? Bấm Ok để tải dữ liệu', function (name) {
-                    app.gridComponent.searchByText(name);
-                  })
-                });
+            {
+              dataField: "PRO",
+              allowSearch: false,
+              visible: false,
+              editOptions: {
+                visible: false
+              },
+              sortOrder: "desc"
+            },
+            {
+              dataField: "Consignment_No",
+              allowSorting: false,
+              caption: "Số VĐ",
+              headerCellTemplate: function (head, info) {
+                var tmp = `<div class="item-content">
+                  <div class="item-inner">    
+                    <div class="item-title"><strong>Số vận đơn</strong></div>         
+                    <div class="item-after after-fix">
+                      <span id="totalCountNOT" class="badge badge-fix">0</span>
+                      <span id="totalCountDEL" class="badge color-red badge-fix">0</span>
+                      <span id="totalCountPOD" class="badge color-green badge-fix">0</span>
+                      <span id="totalCountRET" class="badge color-orange badge-fix">0</span>
+                      <a id="search" href="#" >
+                        <span class="badge color-blue badge-fix"><i class="f7-icons" style="font-size:12px">search</i></span>
+                      </a>
+                    </div>                  
+                  </div>
+                </div>`;
+                head.append(tmp);
+                setTimeout(function () {
+                  if (app.store) {
+                    app.store.load().done(function (a) {
+                      var cPOD = 0;
+                      var cRET = 0;
+                      var cDEL = 0;
+                      var cNOT = 0;
+                      if (a) {
+                        cPOD = a.filter(x => x.PRO == 1).length;
+                        cRET = a.filter(x => x.PRO == 2).length;
+                        cDEL = a.filter(x => x.PRO == 3).length;
+                        cNOT = a.filter(x => x.PRO == 4).length;
+                      }
+                      $('#totalCountPOD').text(cPOD);
+                      $('#totalCountRET').text(cRET);
+                      $('#totalCountDEL').text(cDEL);
+                      $('#totalCountNOT').text(cNOT);                      
+                    });
+                  }
+                  $$('#search').on('click', function () {
+                    app.dialog.prompt('Tìm? Bấm Ok để tải dữ liệu', function (name) {
+                      app.gridComponent.searchByText(name);
+                    })
+                  });
 
-              });
-            },
-            cellTemplate: function (container, options) {
-              let co = "color-gray color-green color-p color-red color-gray".split(' ');
-              let tmp = `<div class="card">
-                <div class="card-header `+ co[options.data.PRO] + `">Card header</div>
-                <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.</div>
-                <div class="card-footer">Card Footer</div>
-              </div>`;
-              $("<div class='card'>").append(
-                $("<div class='card-header card-header-fix'>").append(
-                  $("<span>").text(options.data.Consignment_No),
-                  $("<a class='link link icon-only " + co[options.data.PRO] + " link-icon-fix'><i class='f7-icons size-32'>bookmark_fill</i></a>"),
-                ),
-                $("<div class='card-content card-content-padding card-content-fix'>").append(
-                  $("<div>").text(options.data.Recipient_Name),
-                  $("<div>").text(options.data.Recipient_Address),
-                  $("<div>").append(
-                    $("<span>").text(options.data.Recipient_Phone_No),
-                    " ",
-                    $("<span>").text(options.data.Recipient_Contact_Person),
+                }, 500);
+
+              },
+              cellTemplate: function (container, options) {
+                let co = "color-gray color-green color-p color-red color-gray".split(' ');
+                let tmp = `<div class="card">
+                  <div class="card-header `+ co[options.data.PRO] + `">Card header</div>
+                  <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display card titles and footers for additional information or just for custom actions.</div>
+                  <div class="card-footer">Card Footer</div>
+                </div>`;
+                $("<div class='card'>").append(
+                  $("<div class='card-header card-header-fix'>").append(
+                    $("<span>").text(options.data.Consignment_No),
+                    $("<a class='link link icon-only " + co[options.data.PRO] + " link-icon-fix'><i class='f7-icons size-32'>bookmark_fill</i></a>"),
                   ),
-                  $("<div>").text(options.data.Remark),
-                ),
-                //$("<div class='card-footer'>").text(options.data.Est_Delivery_Date),
-                // $("<img>", { "src": options.value })
-              ).appendTo(container);
-              $(container).css("padding", "0px");
+                  $("<div class='card-content card-content-padding card-content-fix'>").append(
+                    $("<div>").text(options.data.Recipient_Name),
+                    $("<div>").text(options.data.Recipient_Address),
+                    $("<div>").append(
+                      $("<span>").text(options.data.Recipient_Phone_No),
+                      " ",
+                      $("<span>").text(options.data.Recipient_Contact_Person),
+                    ),
+                    $("<div>").text(options.data.Remark),
+                  ),
+                  //$("<div class='card-footer'>").text(options.data.Est_Delivery_Date),
+                  // $("<img>", { "src": options.value })
+                ).appendTo(container);
+                $(container).css("padding", "0px");
+              }
+            },
+            {
+              dataField: "Created_Date",
+              visible: false,
+              editOptions: {
+                visible: false
+              },
+              sortOrder: "desc"
+            },
+            {
+              dataField: "Recipient_Name",
+              visible: false,
+              editOptions: {
+                visible: false
+              },
+            },
+            {
+              dataField: "Recipient_Contact_Person",
+              visible: false,
+              editOptions: {
+                visible: false
+              },
+            },
+            {
+              dataField: "Recipient_Phone_No",
+              visible: false,
+              editOptions: {
+                visible: false
+              },
+            },
+            {
+              dataField: "Recipient_Address",
+              visible: false,
+              editOptions: {
+                visible: false
+              },
+            },
+            {
+              dataField: "Remark",
+              visible: false,
+              editOptions: {
+                visible: false
+              },
+            },
+            {
+              dataField: "Special_Delivery_Remark",
+              visible: false,
+              editOptions: {
+                visible: false
+              },
             }
-          },
-          {
-            dataField: "Created_Date",
-            visible: false,
-            editOptions: {
-              visible: false
-            },
-            sortOrder: "desc"
-          },
-          {
-            dataField: "Recipient_Name",
-            visible: false,
-            editOptions: {
-              visible: false
-            },
-          },
-          {
-            dataField: "Recipient_Contact_Person",
-            visible: false,
-            editOptions: {
-              visible: false
-            },
-          },
-          {
-            dataField: "Recipient_Phone_No",
-            visible: false,
-            editOptions: {
-              visible: false
-            },
-          },
-          {
-            dataField: "Recipient_Address",
-            visible: false,
-            editOptions: {
-              visible: false
-            },
-          },
-          {
-            dataField: "Remark",
-            visible: false,
-            editOptions: {
-              visible: false
-            },
-          },
-          {
-            dataField: "Special_Delivery_Remark",
-            visible: false,
-            editOptions: {
-              visible: false
-            },
-          }
-        ],
-        remoteOperations: true,
-        onSelectionChanged: function (e) {
-          app.data.lastChoice = {};
-          var data = e.selectedRowsData;
-          if (data.length > 0) {
-            if (data[0].PRO > 2) {
-              app.data.lastChoice = data[0];
-              mainView.router.navigate('/bill/' + data[0].Consignment_No + '/');
+          ],
+          remoteOperations: true,
+          onSelectionChanged: function (e) {
+            app.data.lastChoice = {};
+            var data = e.selectedRowsData;
+            if (data.length > 0) {
+              if (data[0].PRO > 2) {
+                app.data.lastChoice = data[0];
+                mainView.router.navigate('/bill/' + data[0].Consignment_No + '/');
+              }
             }
           }
-        }
-      }).dxDataGrid("instance");
+        }).dxDataGrid("instance");
+      }, 500);
+
     }
   },
   // App routes
@@ -244,10 +254,9 @@ var setUserInfoError = function (error) {
 var getUserInfoSuccess = function (obj) {
   //console.log(obj.name);
   //NativeStorage.remove("userInfo", removeSuccess, removeError);
-  if (obj && obj.user && obj.user.length>4 && obj.key && obj.key!="****") {
+  if (obj && obj.user && obj.user.length > 4 && obj.key && obj.key != "****") {
     app.data.user.user_name = obj.user;
     app.data.user.password = obj.key;
-    app.methods.updateStore();
     $$("#user-name").text(obj.user);
     $$("#user-fullname").text(obj.fullname);
     $$("#last-login").text(obj.last);
@@ -255,8 +264,8 @@ var getUserInfoSuccess = function (obj) {
       $$("#user-image").attr("src", "img/sex/" + obj.sex + ".png");
     } else {
       $$("#user-image").attr("src", "img/sex/null.png");
-    }   
-
+    }
+    app.methods.updateStore();
   } else {
     app.loginScreen.open("#my-login-screen");
   }
@@ -356,7 +365,7 @@ $$(document).on('deviceready', function () {
     });
   });
 
-  NativeStorage.getItem("userInfo", getUserInfoSuccess, getUserInfoError);  
+  NativeStorage.getItem("userInfo", getUserInfoSuccess, getUserInfoError);
 
   DevExpress.data.AspNet.createStore({
     key: "ID",
@@ -374,8 +383,9 @@ $$(document).on('deviceready', function () {
     navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
   }, 60000);
 
-  app.methods.updateStore();
-  app.methods.refreshGrid();
+  //app.methods.updateStore();
+  setTimeout(app.methods.refreshGrid, 1000);
+  //app.methods.refreshGrid();
 
 });
 
@@ -398,11 +408,7 @@ $$('#my-login-screen .login-button').on('click', function () {
       };
       //debugger;
       NativeStorage.setItem("userInfo", obj, setUserInfoSuccess, setUserInfoError);
-      app.data.user.user_name = obj.user_name;
-      app.data.user.password =obj.password;
-      // Close login screen
-      app.loginScreen.close('#my-login-screen');
-      app.methods.refreshGrid();
+      location.reload(); 
     } else {
       app.toast.create({
         text: "Thông tin đăng nhập không đúng",
@@ -413,7 +419,7 @@ $$('#my-login-screen .login-button').on('click', function () {
 });
 // Logout
 $$('#dang-xuat').on('click', function () {
-  NativeStorage.setItem("userInfo", {}, setUserInfoSuccess, setUserInfoError);  
+  NativeStorage.setItem("userInfo", {}, setUserInfoSuccess, setUserInfoError);
   app.loginScreen.open("#my-login-screen");
   location.reload();
 });
