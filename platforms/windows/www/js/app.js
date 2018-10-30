@@ -361,7 +361,7 @@ $$(document).on('deviceready', function () {
     var dat = JSON.parse(JSON.parse(data));
     if (dat.version > app.version ) {
       app.toast.create({
-        text: "<strong>Có bản cập nhập mới... </strong><a href='" + dat.url + "'><i class='f7-icons'>cloud_download_fill</i> Tải về</a>.<br>Phiên bản: " + dat.version + ". Ngày: "+dat.date_upload,
+        text: "<strong>Có bản cập nhập mới... </strong><a class='link external' href='" + dat.url + "'><i class='f7-icons'>cloud_download_fill</i> Tải về</a>.<br>Phiên bản: " + dat.version + ". Ngày: "+dat.date_upload,
         position: 'top',
         closeButton: true,
         closeButtonText: '<i class="f7-icons">close_round_fill</i>',        
