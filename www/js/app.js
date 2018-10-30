@@ -7,7 +7,7 @@ var app = new Framework7({
   id: 'com.kerryexpress.kesmobile', // App bundle ID
   name: 'KesMobile', // App name
   theme: 'auto', // Automatic theme detection
-  version: 20,
+  version: 21,
   // App root data
   data: {
     user: {
