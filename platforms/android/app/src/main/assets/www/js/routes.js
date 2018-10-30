@@ -122,26 +122,35 @@ routes = [
       app.preloader.show();
 
       // User ID from request
-      //var userId = routeTo.params.userId;      
-      app.request.get(app.data.serverUrl + "/version.xml", function (data) {
+      //var userId = routeTo.params.userId;     
+      // app.request.get(app.data.serverUrl + "/api/Version", function (data) {
+      //   //debugger;
+      //   var dat = JSON.parse(JSON.parse(data));
+      //   if (dat.version > app.version ) {
+      //     app.toast.create({
+      //       text: "<strong>Có bản cập nhập mới... </strong><a class='link external' href='" + dat.url + "'><i class='f7-icons'>cloud_download_fill</i> Tải về</a>.<br>Phiên bản: " + dat.version + ". Ngày: "+dat.date_upload,
+      //       position: 'top',
+      //       closeButton: true,
+      //       closeButtonText: '<i class="f7-icons">close_round_fill</i>',        
+      //     }).open();
+      //   }
+      // }); 
+      app.request.get(app.data.serverUrl + "/api/Version", function (data) {
         //console.log(data);
         //debugger;
-        var xmlDoc = $.parseXML(data);
-        var $xml = $(xmlDoc);
-        var $version = +$xml.find("version").text();
-        var $url = $xml.find("url").text();
-        var $name = $xml.find("name").text();        
+        // var xmlDoc = $.parseXML(data);
+        // var $xml = $(xmlDoc);
+        // var $version = +$xml.find("version").text();
+        // var $url = $xml.find("url").text();
+        // var $name = $xml.find("name").text();   
+        var dat = JSON.parse(JSON.parse(data));     
         resolve(
           {
             componentUrl: './pages/update.html',
           },
           {
             context: {
-              _data: {
-                version: $version,
-                url: $url,
-                name: $name
-              },
+              _data: dat,
             }
           }
         );
