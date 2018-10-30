@@ -71,7 +71,7 @@ var app = new Framework7({
           showBorders: true,
           showColumnLines: false,
           showRowLines: false,
-          filterValue:[["PRO","=",3],"or",["PRO",'=',4]],
+          filterValue:["PRO","=",4],
           columns: [
             {
               dataField: "Id",
