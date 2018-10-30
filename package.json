@@ -6,6 +6,7 @@
     },
     "displayName": "KesMobile",
     "dependencies": {
+        "all": "0.0.0",
         "call-number": "^1.0.1",
         "cordova-android": "^7.1.1",
         "cordova-ios": "^4.5.5",

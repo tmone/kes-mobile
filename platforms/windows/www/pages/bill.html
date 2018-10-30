@@ -216,7 +216,8 @@
         //}
       },
       addPOD: function (a) {
-        app.dialog.prompt('Nhập đầy đủ họ tên nhận hàng?', function (name) {
+        var dialog = app.dialog.prompt('Nhập đầy đủ họ tên nhận hàng?',function(name){
+         
           if (name && name.length > 2) {
             app.dialog.confirm('Bạn chắc chắn đã giao cho <span style="color:orange">' + name + '</span>?', function () {
               // Show Preloader
@@ -276,8 +277,9 @@
               closeTimeout: 2000,
             }).open();
           }
-
         });
+        dialog.$el.find('input').attr('placeholder','Họ tên...');
+        dialog.open();
       },
       addRET: function (a) {
         app.dialog.confirm('Bạn chắc chắn chuyển hoàn đơn <span style="color:orange">' + a + '</span>?', function () {

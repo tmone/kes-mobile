@@ -7,7 +7,7 @@ var app = new Framework7({
   id: 'com.kerryexpress.kesmobile', // App bundle ID
   name: 'KesMobile', // App name
   theme: 'auto', // Automatic theme detection
-  version: 19,
+  version: 20,
   // App root data
   data: {
     user: {
@@ -126,11 +126,21 @@ var app = new Framework7({
                       $('#totalCountRET').text(cRET);
                       $('#totalCountDEL').text(cDEL);
                       $('#totalCountNOT').text(cNOT);
+
+                      if(cNOT==0){
+                        setTimeout(function(){$('#grid-data').dxDataGrid("instance").refresh();},30000);
+                      }
+
                     });
                   }
                   $$('#search').on('click', function () {
                     app.dialog.prompt('Tìm? Bấm Ok để tải dữ liệu', function (name) {
-                      app.gridComponent.searchByText(name);
+                      if(name==""){
+                        app.gridComponent.refresh();
+                      }else{
+                        app.gridComponent.searchByText(name);
+                      }
+                      
                     })
                   });
 
