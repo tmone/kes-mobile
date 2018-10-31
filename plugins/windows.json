@@ -19,9 +19,6 @@
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "KesMobile"
     },
-    "phonegap-plugin-push": {
-      "PACKAGE_NAME": "KesMobile"
-    },
     "cordova-plugin-console": {
       "PACKAGE_NAME": "KesMobile"
     },

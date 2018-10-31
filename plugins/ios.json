@@ -45,9 +45,6 @@
     },
     "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    },
-    "phonegap-plugin-push": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   },
   "dependent_plugins": {

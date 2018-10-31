@@ -2,5 +2,5 @@
 platform :ios, '8.0'
 target 'D:\kes-mobile\platforms\ios\KesMobile' do
 	project 'D:\kes-mobile\platforms\ios\KesMobile.xcodeproj'
-	pod 'FirebaseMessaging', '~> 2.0.0'
+
 end

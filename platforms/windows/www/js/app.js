@@ -15,7 +15,7 @@ var app = new Framework7({
       password: '****',
     },
     lastChoice: {},
-    serverUrl: "http://10.10.4.16:30000",
+    serverUrl: "http://210.211.121.146:30000",
     pushBill: true,
     geoLocation: {},
     signal: true,

@@ -64,9 +64,6 @@
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner" />
     </feature>
-    <feature name="PushNotification">
-        <param name="ios-package" value="PushPlugin" />
-    </feature>
     <feature name="Zip">
         <param name="ios-package" value="ZipPlugin" />
     </feature>
@@ -133,4 +130,5 @@
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />
     <preference name="phonegap-version" value="cli-8.0.0" />
+    <preference name="pgb-builder-version" value="1" />
 </widget>

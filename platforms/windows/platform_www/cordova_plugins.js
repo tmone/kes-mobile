@@ -76,20 +76,6 @@ module.exports = [
         "runs": true
     },
     {
-        "id": "phonegap-plugin-push.PushNotification",
-        "file": "plugins/phonegap-plugin-push/www/push.js",
-        "pluginId": "phonegap-plugin-push",
-        "clobbers": [
-            "PushNotification"
-        ]
-    },
-    {
-        "id": "phonegap-plugin-push.PushPlugin",
-        "file": "plugins/phonegap-plugin-push/src/windows/PushPluginProxy.js",
-        "pluginId": "phonegap-plugin-push",
-        "runs": true
-    },
-    {
         "id": "cordova-plugin-console.logger",
         "file": "plugins/cordova-plugin-console/www/logger.js",
         "pluginId": "cordova-plugin-console",
@@ -473,7 +459,6 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-network-information": "2.0.1",
     "cordova-plugin-statusbar": "2.4.2",
-    "phonegap-plugin-push": "2.1.3",
     "cordova-plugin-console": "1.1.0",
     "cordova-plugin-dialogs": "2.0.1",
     "cordova-plugin-whitelist": "1.3.3",
