@@ -36,6 +36,10 @@
     componentUrl: './pages/bill.html',
   },
   {
+    path: '/history/',
+    componentUrl: './pages/history.html',
+  },
+  {
     path: '/del/:billId/',
     async: function (routeTo, routeFrom, resolve, reject) {
       // Router instance

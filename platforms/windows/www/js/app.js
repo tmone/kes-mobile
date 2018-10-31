@@ -7,7 +7,7 @@ var app = new Framework7({
   id: 'com.kerryexpress.kesmobile', // App bundle ID
   name: 'KesMobile', // App name
   theme: 'auto', // Automatic theme detection
-  version: 20,
+  version: 21,
   // App root data
   data: {
     user: {
@@ -15,7 +15,7 @@ var app = new Framework7({
       password: '****',
     },
     lastChoice: {},
-    serverUrl: "http://210.211.121.146:30000",
+    serverUrl: "http://10.10.4.16:30000",
     pushBill: true,
     geoLocation: {},
     signal: true,
@@ -71,6 +71,7 @@ var app = new Framework7({
           showBorders: true,
           showColumnLines: false,
           showRowLines: false,
+          filterValue:["PRO","=",4],
           columns: [
             {
               dataField: "Id",

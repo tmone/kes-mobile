@@ -7,6 +7,24 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-file-downloader": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
     "cordova-plugin-nativestorage": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
@@ -19,34 +37,16 @@
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
-    "phonegap-plugin-push": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    },
-    "cordova-plugin-dialogs": {
+    "cordova-plugin-vibration": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    },
     "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    },
-    "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    },
-    "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
-    },
-    "cordova-plugin-file-downloader": {
+    "phonegap-plugin-push": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   },
