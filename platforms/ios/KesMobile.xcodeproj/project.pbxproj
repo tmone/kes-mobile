@@ -61,6 +61,12 @@
 		D69CF38BCA044439BCB22D5C /* CDVBarcodeScanner.mm in Resources */ = {isa = PBXBuildFile; fileRef = 4F857D3D4117435A80CA6611 /* CDVBarcodeScanner.mm */; };
 		294B83691ABE41EE9812A19A /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97EC0BA733D45568FA56C62 /* scannerOverlay.xib */; };
 		22916961820948B1B49B2DCA /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD0E14ABC84DD6B07A21AB /* CDVBarcodeScanner.bundle */; };
+		8D60A41D277C4CCC8ECC386F /* AppCenterShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5A3D1FE0C4D9699D99AC4 /* AppCenterShared.m */; };
+		E209774EC6484C15B93DA35D /* AppCenterSharedPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8090A9CB144F599E1A5E45 /* AppCenterSharedPlugin.m */; };
+		1B1C003E87AF429E959892D1 /* AppCenterAnalyticsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 813BAB135C144C439126399E /* AppCenterAnalyticsPlugin.m */; };
+		127F1A3E0A6842B987FB6DCF /* AppCenterCrashesPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E0A14DF624E7CA0E98BBF /* AppCenterCrashesPlugin.m */; };
+		DF5D1BFF55B143BC862BAFE7 /* CordovaCrashesDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B994B0E30941EC9E3B8221 /* CordovaCrashesDelegate.m */; };
+		97B8D8D169434A8DB05C7122 /* CrashesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9180890B60014206926AEB32 /* CrashesUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +192,18 @@
 		4F857D3D4117435A80CA6611 /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.mm"; path = "phonegap-plugin-barcodescanner/CDVBarcodeScanner.mm"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C97EC0BA733D45568FA56C62 /* scannerOverlay.xib */ = {isa = PBXFileReference; name = "scannerOverlay.xib"; path = "scannerOverlay.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
 		9CAD0E14ABC84DD6B07A21AB /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.bundle"; path = "CDVBarcodeScanner.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		8AF5A3D1FE0C4D9699D99AC4 /* AppCenterShared.m */ = {isa = PBXFileReference; name = "AppCenterShared.m"; path = "cordova-plugin-appcenter-shared/AppCenterShared.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		7B8090A9CB144F599E1A5E45 /* AppCenterSharedPlugin.m */ = {isa = PBXFileReference; name = "AppCenterSharedPlugin.m"; path = "cordova-plugin-appcenter-shared/AppCenterSharedPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		DCD8066BEA4B4EC4A1F38C3B /* AppCenterShared.h */ = {isa = PBXFileReference; name = "AppCenterShared.h"; path = "cordova-plugin-appcenter-shared/AppCenterShared.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		4CBC891077EE407B8E222046 /* AppCenterSharedPlugin.h */ = {isa = PBXFileReference; name = "AppCenterSharedPlugin.h"; path = "cordova-plugin-appcenter-shared/AppCenterSharedPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		813BAB135C144C439126399E /* AppCenterAnalyticsPlugin.m */ = {isa = PBXFileReference; name = "AppCenterAnalyticsPlugin.m"; path = "cordova-plugin-appcenter-analytics/AppCenterAnalyticsPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		7F20EEF24ADD43138A36FB6D /* AppCenterAnalyticsPlugin.h */ = {isa = PBXFileReference; name = "AppCenterAnalyticsPlugin.h"; path = "cordova-plugin-appcenter-analytics/AppCenterAnalyticsPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		7C3E0A14DF624E7CA0E98BBF /* AppCenterCrashesPlugin.m */ = {isa = PBXFileReference; name = "AppCenterCrashesPlugin.m"; path = "cordova-plugin-appcenter-crashes/AppCenterCrashesPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		C2B994B0E30941EC9E3B8221 /* CordovaCrashesDelegate.m */ = {isa = PBXFileReference; name = "CordovaCrashesDelegate.m"; path = "cordova-plugin-appcenter-crashes/CordovaCrashesDelegate.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		9180890B60014206926AEB32 /* CrashesUtils.m */ = {isa = PBXFileReference; name = "CrashesUtils.m"; path = "cordova-plugin-appcenter-crashes/CrashesUtils.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		841E03A829E5498EA5EFB612 /* AppCenterCrashesPlugin.h */ = {isa = PBXFileReference; name = "AppCenterCrashesPlugin.h"; path = "cordova-plugin-appcenter-crashes/AppCenterCrashesPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		38BBFD1593ED4DFB87DB4085 /* CordovaCrashesDelegate.h */ = {isa = PBXFileReference; name = "CordovaCrashesDelegate.h"; path = "cordova-plugin-appcenter-crashes/CordovaCrashesDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		ECEB973FB4D04D2B97791946 /* CrashesUtils.h */ = {isa = PBXFileReference; name = "CrashesUtils.h"; path = "cordova-plugin-appcenter-crashes/CrashesUtils.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +399,18 @@
 				6B47D899B6DF42EBA2618B63 /* CDVVibration.m */,
 				6810CC24AB134AC9BF536F1A /* CDVVibration.h */,
 				4F857D3D4117435A80CA6611 /* CDVBarcodeScanner.mm */,
+				8AF5A3D1FE0C4D9699D99AC4 /* AppCenterShared.m */,
+				7B8090A9CB144F599E1A5E45 /* AppCenterSharedPlugin.m */,
+				DCD8066BEA4B4EC4A1F38C3B /* AppCenterShared.h */,
+				4CBC891077EE407B8E222046 /* AppCenterSharedPlugin.h */,
+				813BAB135C144C439126399E /* AppCenterAnalyticsPlugin.m */,
+				7F20EEF24ADD43138A36FB6D /* AppCenterAnalyticsPlugin.h */,
+				7C3E0A14DF624E7CA0E98BBF /* AppCenterCrashesPlugin.m */,
+				C2B994B0E30941EC9E3B8221 /* CordovaCrashesDelegate.m */,
+				9180890B60014206926AEB32 /* CrashesUtils.m */,
+				841E03A829E5498EA5EFB612 /* AppCenterCrashesPlugin.h */,
+				38BBFD1593ED4DFB87DB4085 /* CordovaCrashesDelegate.h */,
+				ECEB973FB4D04D2B97791946 /* CrashesUtils.h */,
 			);
 			name = Plugins;
 			path = "KesMobile/Plugins";
@@ -531,6 +561,12 @@
 				3EB679D4F2BC4E4E9D8D044C /* CDVStatusBar.m in Sources */,
 				BCCCCFFD35AF43A8A019BD5E /* CDVVibration.m in Sources */,
 				D69CF38BCA044439BCB22D5C /* CDVBarcodeScanner.mm in Resources */,
+				8D60A41D277C4CCC8ECC386F /* AppCenterShared.m in Sources */,
+				E209774EC6484C15B93DA35D /* AppCenterSharedPlugin.m in Sources */,
+				1B1C003E87AF429E959892D1 /* AppCenterAnalyticsPlugin.m in Sources */,
+				127F1A3E0A6842B987FB6DCF /* AppCenterCrashesPlugin.m in Sources */,
+				DF5D1BFF55B143BC862BAFE7 /* CordovaCrashesDelegate.m in Sources */,
+				97B8D8D169434A8DB05C7122 /* CrashesUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

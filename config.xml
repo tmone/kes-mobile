@@ -19,6 +19,7 @@
         <preference name="android-minSdkVersion" value="16" />
         <preference name="android-build-tool" value="gradle" />
         <allow-intent href="market:*" />
+        <preference name="APP_SECRET" value="c7ba4adf-03f6-4e6b-8b91-61afb6009d9a" />
         <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="res/icon/android/drawable-hdpi-icon.png" />
@@ -42,6 +43,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
+        <preference name="APP_SECRET" value="67f32431-f05b-4d29-8c9d-e4066269deba" />
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="res/icon/ios/icon-40.png" width="40" />
@@ -102,9 +104,6 @@
     <preference name="StatusBarStyle" value="blacktranslucent" />
     <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="pgb-builder-version" value="1" />
-    <engine name="windows" spec="^6.0.1" />
-    <engine name="android" spec="^7.1.1" />
-    <engine name="ios" spec="4.5.5" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.3.2" />
     <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
@@ -121,4 +120,9 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-file-downloader" spec="^0.4.0" />
+    <plugin name="cordova-plugin-appcenter-analytics" spec="^0.2.0" />
+    <plugin name="cordova-plugin-appcenter-crashes" spec="^0.2.0" />
+    <engine name="windows" spec="^6.0.1" />
+    <engine name="android" spec="^7.1.1" />
+    <engine name="ios" spec="4.5.5" />
 </widget>

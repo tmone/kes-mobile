@@ -49,6 +49,12 @@
     },
     "cordova-plugin-file-downloader": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-appcenter-analytics": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-appcenter-crashes": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   },
   "dependent_plugins": {
@@ -62,6 +68,9 @@
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
     "cordova-plugin-file-md5": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-appcenter-shared": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   }

@@ -48,6 +48,12 @@
     },
     "cordova-plugin-file-downloader": {
       "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-appcenter-analytics": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-appcenter-crashes": {
+      "PACKAGE_NAME": "KesMobile"
     }
   },
   "dependent_plugins": {
@@ -61,6 +67,9 @@
       "PACKAGE_NAME": "KesMobile"
     },
     "cordova-plugin-file-md5": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-appcenter-shared": {
       "PACKAGE_NAME": "KesMobile"
     }
   }

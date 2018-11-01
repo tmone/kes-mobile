@@ -47,6 +47,18 @@
     <feature name="md5chksum">
         <param name="android-package" value="com.manuelramonlopez.cordova.plugins.md5chksum" />
     </feature>
+    <feature name="AppCenterShared">
+        <param name="onload" value="true" />
+        <param name="android-package" value="com.microsoft.azure.mobile.cordova.AppCenterSharedPlugin" />
+    </feature>
+    <feature name="AppCenterAnalytics">
+        <param name="onload" value="true" />
+        <param name="android-package" value="com.microsoft.azure.mobile.cordova.AppCenterAnalyticsPlugin" />
+    </feature>
+    <feature name="AppCenterCrashes">
+        <param name="onload" value="true" />
+        <param name="android-package" value="com.microsoft.azure.mobile.cordova.AppCenterCrashesPlugin" />
+    </feature>
     <feature name="Zip">
         <param name="android-package" value="org.apache.cordova.Zip" />
     </feature>
@@ -94,4 +106,5 @@
     <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="pgb-builder-version" value="1" />
     <preference name="android-build-tool" value="gradle" />
+    <preference name="APP_SECRET" value="c7ba4adf-03f6-4e6b-8b91-61afb6009d9a" />
 </widget>

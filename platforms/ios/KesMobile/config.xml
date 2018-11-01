@@ -64,6 +64,18 @@
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner" />
     </feature>
+    <feature name="AppCenterShared">
+        <param name="ios-package" value="AppCenterSharedPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="AppCenterAnalytics">
+        <param name="ios-package" value="AppCenterAnalyticsPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="AppCenterCrashes">
+        <param name="ios-package" value="AppCenterCrashesPlugin" />
+        <param name="onload" value="true" />
+    </feature>
     <feature name="Zip">
         <param name="ios-package" value="ZipPlugin" />
     </feature>
@@ -131,4 +143,5 @@
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />
     <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="pgb-builder-version" value="1" />
+    <preference name="APP_SECRET" value="67f32431-f05b-4d29-8c9d-e4066269deba" />
 </widget>
