@@ -7,6 +7,12 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-appcenter-analytics": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
+    "cordova-plugin-appcenter-crashes": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
@@ -46,14 +52,17 @@
     "phonegap-plugin-barcodescanner": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
-    "cordova-plugin-appcenter-analytics": {
+    "cordova-plugin-code-push": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
-    "cordova-plugin-appcenter-crashes": {
+    "cordova-plugin-appcenter-push": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   },
   "dependent_plugins": {
+    "cordova-plugin-appcenter-shared": {
+      "PACKAGE_NAME": "com.kerryexpress.kesmobile"
+    },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
@@ -66,7 +75,7 @@
     "cordova-plugin-file-md5": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     },
-    "cordova-plugin-appcenter-shared": {
+    "code-push": {
       "PACKAGE_NAME": "com.kerryexpress.kesmobile"
     }
   }

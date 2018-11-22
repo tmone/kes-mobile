@@ -474,6 +474,98 @@ module.exports = [
         "clobbers": [
             "AppCenter.Crashes"
         ]
+    },
+    {
+        "id": "code-push.AcquisitionManager",
+        "file": "plugins/code-push/script/acquisition-sdk.js",
+        "pluginId": "code-push",
+        "merges": [
+            "window"
+        ]
+    },
+    {
+        "id": "cordova-plugin-code-push.codePush",
+        "file": "plugins/cordova-plugin-code-push/bin/www/codePush.js",
+        "pluginId": "cordova-plugin-code-push",
+        "clobbers": [
+            "codePush"
+        ]
+    },
+    {
+        "id": "cordova-plugin-code-push.localPackage",
+        "file": "plugins/cordova-plugin-code-push/bin/www/localPackage.js",
+        "pluginId": "cordova-plugin-code-push",
+        "clobbers": [
+            "LocalPackage"
+        ]
+    },
+    {
+        "id": "cordova-plugin-code-push.remotePackage",
+        "file": "plugins/cordova-plugin-code-push/bin/www/remotePackage.js",
+        "pluginId": "cordova-plugin-code-push",
+        "clobbers": [
+            "RemotePackage"
+        ]
+    },
+    {
+        "id": "cordova-plugin-code-push.syncStatus",
+        "file": "plugins/cordova-plugin-code-push/bin/www/syncStatus.js",
+        "pluginId": "cordova-plugin-code-push",
+        "clobbers": [
+            "SyncStatus"
+        ]
+    },
+    {
+        "id": "cordova-plugin-code-push.installMode",
+        "file": "plugins/cordova-plugin-code-push/bin/www/installMode.js",
+        "pluginId": "cordova-plugin-code-push",
+        "clobbers": [
+            "InstallMode"
+        ]
+    },
+    {
+        "id": "cordova-plugin-code-push.codePushUtil",
+        "file": "plugins/cordova-plugin-code-push/bin/www/codePushUtil.js",
+        "pluginId": "cordova-plugin-code-push",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-code-push.fileUtil",
+        "file": "plugins/cordova-plugin-code-push/bin/www/fileUtil.js",
+        "pluginId": "cordova-plugin-code-push",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-code-push.httpRequester",
+        "file": "plugins/cordova-plugin-code-push/bin/www/httpRequester.js",
+        "pluginId": "cordova-plugin-code-push",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-code-push.nativeAppInfo",
+        "file": "plugins/cordova-plugin-code-push/bin/www/nativeAppInfo.js",
+        "pluginId": "cordova-plugin-code-push",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-code-push.package",
+        "file": "plugins/cordova-plugin-code-push/bin/www/package.js",
+        "pluginId": "cordova-plugin-code-push",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-code-push.sdk",
+        "file": "plugins/cordova-plugin-code-push/bin/www/sdk.js",
+        "pluginId": "cordova-plugin-code-push",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-appcenter-push.Push",
+        "file": "plugins/cordova-plugin-appcenter-push/www/Push.js",
+        "pluginId": "cordova-plugin-appcenter-push",
+        "clobbers": [
+            "AppCenter.Push"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -499,7 +591,10 @@ module.exports.metadata =
     "cordova-plugin-file-downloader": "0.4.0",
     "cordova-plugin-appcenter-shared": "0.2.0",
     "cordova-plugin-appcenter-analytics": "0.2.0",
-    "cordova-plugin-appcenter-crashes": "0.2.0"
+    "cordova-plugin-appcenter-crashes": "0.2.0",
+    "code-push": "2.0.6",
+    "cordova-plugin-code-push": "1.11.14",
+    "cordova-plugin-appcenter-push": "0.2.1"
 };
 // BOTTOM OF METADATA
 });

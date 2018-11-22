@@ -54,6 +54,12 @@
     },
     "cordova-plugin-appcenter-crashes": {
       "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-code-push": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "cordova-plugin-appcenter-push": {
+      "PACKAGE_NAME": "KesMobile"
     }
   },
   "dependent_plugins": {
@@ -70,6 +76,9 @@
       "PACKAGE_NAME": "KesMobile"
     },
     "cordova-plugin-appcenter-shared": {
+      "PACKAGE_NAME": "KesMobile"
+    },
+    "code-push": {
       "PACKAGE_NAME": "KesMobile"
     }
   }

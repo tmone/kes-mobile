@@ -349,6 +349,7 @@ function checkConnection() {
 //////////////////////////////////////////
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function () {
+  codePush.sync(null, { updateDialog: false, installMode: InstallMode.IMMEDIATE });
   // if (navigator.connection.type == navigator.connection.NONE) {
   //   app.dialog.alert("Không có tín hiệu mạng!");
   // }

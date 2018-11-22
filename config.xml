@@ -19,7 +19,8 @@
         <preference name="android-minSdkVersion" value="16" />
         <preference name="android-build-tool" value="gradle" />
         <allow-intent href="market:*" />
-        <preference name="APP_SECRET" value="c7ba4adf-03f6-4e6b-8b91-61afb6009d9a" />
+        <preference name="APP_SECRET" value="ea198278-ae2f-48a2-bdf1-0a4fdac82f59" />
+        <preference name="CodePushDeploymentKey" value="oWxklfmj0YXmlLg8YTpcXgzH2S6WHJYrwj4R7" />
         <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="res/icon/android/drawable-hdpi-icon.png" />
@@ -43,7 +44,8 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
-        <preference name="APP_SECRET" value="67f32431-f05b-4d29-8c9d-e4066269deba" />
+        <preference name="APP_SECRET" value="64d1155d-8977-46f6-830c-e90125c2f1b6" />
+        <preference name="CodePushDeploymentKey" value="_quv8ieKeJa0_i9h-nLfG5Konc66H1BcPsERQ" />
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="res/icon/ios/icon-40.png" width="40" />
@@ -120,7 +122,9 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-file-downloader" spec="^0.4.0" />
+    <plugin name="cordova-plugin-appcenter-analytics" spec="^0.2.0" />
+    <plugin name="cordova-plugin-appcenter-crashes" spec="^0.2.0" />
     <engine name="windows" spec="^6.0.1" />
-    <engine name="android" spec="^7.1.1" />
-    <engine name="ios" spec="4.5.5" />
+    <engine name="ios" spec="^4.5.5" />
+    <engine name="android" spec="^7.1.3" />
 </widget>

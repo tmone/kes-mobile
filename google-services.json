@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1038248775805",
+    "firebase_url": "https://guess-zz.firebaseio.com",
+    "project_id": "guess-zz",
+    "storage_bucket": "guess-zz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038248775805:android:04b836bea7bdc704",
+        "android_client_info": {
+          "package_name": "xyz.tmone.guess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038248775805-ubtvcdt0qfu5f63e578cim29h20pe9v4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAMzookjG3tAu2hKRbM9JzuL5uf0ysuQ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
